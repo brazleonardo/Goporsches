@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <meta name="theme-color" content="#4b5e6b">
+  <meta name="msapplication-navbutton-color" content="#4b5e6b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#4b5e6b">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <title>Goporsche</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/lib/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/lib/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+	<section class="session session-header-main">
+		<div class="container-fluid">
+			<div class="row logo-menu">
+				<div class="col-6 col-sm-4">
+					<h1 class="logo"><img src="assets/images/logo.png" alt="Goporsche" class="img-fluid"></h1>
+				</div>
+				<div class="col-6 col-sm-8">
+					<div class="show-sm">
+						<button type="button" class="bt select-veiculo"><span class="fas fa-search"></span></button>
+						<a href="#" class="bt open-to-car">
+							<span class="has-item-car">1</span>
+							<span class="fas fa-shopping-cart"></span>
+						</a>
+						<button type="button" class="bt show-menu-sm">
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		            </div>
+
+					<nav class="nav-default">
+						<ul class="menu">
+							<li class="show-sm">
+								<div class="form-search-veiculo">
+									<input type="text" class="form-control search" placeholder="Número(s) de peça ou palavras-chave">
+									<button type="submit" class="btn"><span class="fas fa-search"></span></button>		
+								</div>
+							</li>
+							<li><a href="/"><span class="fas fa-home"></span> home</a></li>
+							<li><a href="W"><span class="fas fa-user"></span> Minha conta</a></li>
+							<li><a href="W"><span class="fas fa-envelope-open"></span> Contato</a></li>
+							<li>
+								<a href="#" class="open-to-car">
+									<span class="has-item-car">1</span>
+									<span class="fas fa-shopping-cart"></span> Carrinho
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="header-serach">
+				<div class="row justify-content-center form-search-veiculo">
+					<div class="col-12 col-sm-12 col-md-2">
+						<a href="#" class="select-veiculo"><span class="fas fa-car"></span> Seu veículo <span class="fas fa-caret-down"></span></a>
+					</div>
+					<div class="col-12 col-sm-12 col-md-10">
+						<input type="text" class="form-control search" placeholder="Número(s) de peça ou palavras-chave">
+						<button type="submit" class="btn"><span class="fas fa-search"></span></button>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="session session-breadcrumb mg-top">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="">Home</a></li>
+					<li class="breadcrumb-item">Produtos</li>
+				</ol>
+			</nav>
+		</div>
+	</section>
+
+	<section class="session session-filtro-produtos mg-top">
+		<div class="container">
+			<h3 class="subtitle">SHOCKS & STRUTS</h3>
+			<div class="form form-filtros">
+				<label class="label">Filtros</label>
+				<div class="row justify-content-center">
+					<div class="col-6 col-md">
+						<div class="custom-select" data-label="false">
+							<span class="label-select">Escolha ano</span>
+							<select name="ano">
+								<option value="" selected="selected">Escolha ano</option>
+								<option value="2018">2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+								<option value="2014">2014</option>
+								<option value="2013">2013</option>
+								<option value="2012">2012</option>
+								<option value="2011">2011</option>
+								<option value="2010">2010</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-6 col-md">
+						<div class="custom-select" data-label="false">
+							<span class="label-select">Escolha marca</span>
+							<select name="marca">
+								<option value="" selected="selected">Escolha marca</option>
+								<option value="Porsche">Porsche</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-6 col-md">
+						<div class="custom-select" data-label="false">
+							<span class="label-select">Escolha modelo</span>
+							<select name="modelo">
+								<option value="" selected="selected">Escolha modelo</option>
+								<option value="Modelo 1">Modelo 1</option>
+								<option value="Modelo 2">Modelo 2</option>
+								<option value="Modelo 3">Modelo 3</option>
+								<option value="Modelo 4">Modelo 4</option>
+								<option value="Modelo 5">Modelo 5</option>
+								<option value="Modelo 6">Modelo 6</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-6 col-md">
+						<button type="button" class="btn btn-default btn-clear btn-full">Limpar filtros</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="session session-listagem-produtos mg-top">
+		<div class="container">
+			<ul>
+				<li>
+					<div class="row justify-content-center">
+						<div class="col-4 col-md-2">
+							<a href="detalhes.html"><img src="assets/images/produto01.png" alt="Produto 1" class="img-fluid"></a>
+						</div>
+						<div class="col">
+							<h3 class="subtitle"><a href="detalhes.html">Produto 1</a></h3>							
+							<span class="d-block"><strong>Posições:</strong> esquerda, direita</span>
+							<span class="d-block"><strong>Outros nomes:</strong> Conjunto de pinça, rotor, disco de freio</span>
+							<span class="d-block"><strong>Descrição:</strong> 911. Esquerda. Certo. Com turbo. 1984-89, turbo.</span>
+							<span class="d-block"><strong>Se encaixa:</strong> Porsche: 911</span>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">								
+							<div class="row justify-content-center sm-mg-top">
+								<div class="col-4 col-md-8">
+									<div class="sm-center">
+										<span class="d-block preco preco-ant">R$ 379,90</span>
+										<span class="d-block preco">R$ 289,90</span>
+									</div>
+								</div>
+								<div class="col col-md-8">
+									<a href="#" class="btn btn-green add-to-car" data-id-produto="01">
+										<span class="fas fa-shopping-cart"></span> + carrinho</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="row justify-content-center">
+						<div class="col-4 col-md-2">
+							<a href="detalhes.html"><img src="assets/images/produto02.png" alt="Produto 2" class="img-fluid"></a>
+						</div>
+						<div class="col">
+							<h3 class="subtitle"><a href="detalhes.html">Produto 2</a></h3>							
+							<span class="d-block"><strong>Posições:</strong> esquerda, direita</span>
+							<span class="d-block"><strong>Outros nomes:</strong> Conjunto de pinça, rotor, disco de freio</span>
+							<span class="d-block"><strong>Descrição:</strong> 911. Esquerda. Certo. Com turbo. 1984-89, turbo.</span>
+							<span class="d-block"><strong>Se encaixa:</strong> Porsche: 911</span>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">								
+							<div class="row justify-content-center sm-mg-top">
+								<div class="col-4 col-md-8">
+									<div class="sm-center">
+										<span class="d-block preco preco-ant">R$ 439,99</span>
+										<span class="d-block preco">R$ 359,99</span>
+									</div>
+								</div>
+								<div class="col col-md-8">
+									<a href="#" class="btn btn-green add-to-car" data-id-produto="02">
+										<span class="fas fa-shopping-cart"></span> + carrinho</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="row justify-content-center">
+						<div class="col-4 col-md-2">
+							<a href="detalhes.html"><img src="assets/images/produto03.png" alt="Produto 3" class="img-fluid"></a>
+						</div>
+						<div class="col">
+							<h3 class="subtitle"><a href="detalhes.html">Produto 3</a></h3>							
+							<span class="d-block"><strong>Posições:</strong> esquerda, direita</span>
+							<span class="d-block"><strong>Outros nomes:</strong> Conjunto de pinça, rotor, disco de freio</span>
+							<span class="d-block"><strong>Descrição:</strong> 911. Esquerda. Certo. Com turbo. 1984-89, turbo.</span>
+							<span class="d-block"><strong>Se encaixa:</strong> Porsche: 911</span>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">								
+							<div class="row justify-content-center sm-mg-top">
+								<div class="col-4 col-md-8">
+									<div class="sm-center">
+										<span class="d-block preco preco-ant">R$ 559,90</span>
+										<span class="d-block preco">R$ 459,90</span>
+									</div>
+								</div>
+								<div class="col col-md-8">
+									<a href="#" class="btn btn-green add-to-car" data-id-produto="03">
+										<span class="fas fa-shopping-cart"></span> + carrinho</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="row justify-content-center">
+						<div class="col-4 col-md-2">
+							<a href="detalhes.html"><img src="assets/images/produto04.png" alt="Produto 4" class="img-fluid"></a>
+						</div>
+						<div class="col">
+							<h3 class="subtitle"><a href="detalhes.html">Produto 4</a></h3>							
+							<span class="d-block"><strong>Posições:</strong> esquerda, direita</span>
+							<span class="d-block"><strong>Outros nomes:</strong> Conjunto de pinça, rotor, disco de freio</span>
+							<span class="d-block"><strong>Descrição:</strong> 911. Esquerda. Certo. Com turbo. 1984-89, turbo.</span>
+							<span class="d-block"><strong>Se encaixa:</strong> Porsche: 911</span>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">								
+							<div class="row justify-content-center sm-mg-top">
+								<div class="col-4 col-md-8">
+									<div class="sm-center">
+										<span class="d-block preco preco-ant">R$ 489,90</span>
+										<span class="d-block preco">R$ 389,90</span>
+									</div>
+								</div>
+								<div class="col col-md-8">
+									<a href="#" class="btn btn-green add-to-car" data-id-produto="04">
+										<span class="fas fa-shopping-cart"></span> + carrinho</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="row justify-content-center">
+						<div class="col-4 col-md-2">
+							<a href="detalhes.html"><img src="assets/images/produto05.png" alt="Produto 5" class="img-fluid"></a>
+						</div>
+						<div class="col">
+							<h3 class="subtitle"><a href="detalhes.html">Produto 5</a></h3>							
+							<span class="d-block"><strong>Posições:</strong> esquerda, direita</span>
+							<span class="d-block"><strong>Outros nomes:</strong> Conjunto de pinça, rotor, disco de freio</span>
+							<span class="d-block"><strong>Descrição:</strong> 911. Esquerda. Certo. Com turbo. 1984-89, turbo.</span>
+							<span class="d-block"><strong>Se encaixa:</strong> Porsche: 911</span>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">								
+							<div class="row justify-content-center sm-mg-top">
+								<div class="col-4 col-md-8">
+									<div class="sm-center">
+										<span class="d-block preco preco-ant">R$ 589,99</span>
+										<span class="d-block preco">R$ 549,99</span>
+									</div>
+								</div>
+								<div class="col col-md-8">
+									<a href="#" class="btn btn-green add-to-car" data-id-produto="05">
+										<span class="fas fa-shopping-cart"></span> + carrinho</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="session session-footer mg-top">
+		<div class="container-fluid">
+			<span class="text-center text-small">By Marketing Forra de Série e no canto direito coloque o ícone do Facebook com o seguinte hiperlink: <a href="https://www.facebook.com/GoPorsches/" target="_blank">https://www.facebook.com/GoPorsches</a></span>
+		</div>
+	</section>
+
+	<aside class="session-carrinho">
+		<div class="main" id="main-carrinho">
+			<header class="header-carrinho">
+				<div class="row">
+					<div class="col-2">
+						<a href="#" class="close-carrinho">&times;</a>
+					</div>
+					<div class="col">
+						<h3 class="subtitle text-center">CARRINHO (0)</h3>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<ul class="items"></ul>
+			</div>
+			<footer class="footer-info"></footer>
+		</div>
+		<div class="main" id="main-login">
+			<header class="header-carrinho">
+				<div class="row">
+					<div class="col-2">
+						<a href="#" class="close-carrinho">&times;</a>
+					</div>
+					<div class="col">
+						<h3 class="subtitle text-center">LOGIN</h3>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<p>Digite seu CPF ou e-mail para acessar sua conta.</p>
+				<div class="form">
+					<div class="form-group custom-material">
+						<input type="email" name="login" class="form-control custom-field valida valida-email" autocomplete="off">
+						<label for="login">Login</label>
+					</div>
+					<div class="form-group custom-material">
+						<input type="password" name="senha" class="form-control custom-field valida valida-senha" autocomplete="off new-password">
+						<label for="senha">Senha</label>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col">
+								<a href="#" class="btn btn-link btn-esq-senha">Esqueceu a senha?</a>
+							</div>
+							<div class="col">
+								<button class="btn btn-default btn-full disabled">Login</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">					
+						<a href="#" class="btn btn-link btn-cadastro">Faça seu cadastro agora!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main-esq-senha">
+			<header class="header-carrinho">
+				<div class="row">
+					<div class="col-2">
+						<a href="#" class="close-carrinho">&times;</a>
+					</div>
+					<div class="col">
+						<h3 class="subtitle text-center">LOGIN</h3>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<p>Digite seu e-mail para recuperar sua senha.</p>
+				<div class="form">
+					<div class="form-group custom-material">
+						<input type="email" name="email" class="form-control custom-field valida valida-email" autocomplete="off">
+						<label for="login">Seu e-mail</label>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col">
+								<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
+							</div>
+							<div class="col">
+								<button class="btn btn-default btn-full disabled">Enviar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main" id="main-cadastro">
+			<header class="header-carrinho">
+				<div class="row">
+					<div class="col-2">
+						<a href="#" class="close-carrinho">&times;</a>
+					</div>
+					<div class="col">
+						<h3 class="subtitle text-center">CADASTRO</h3>
+					</div>
+				</div>
+			</header>
+			<div class="content">
+				<p>Precisamos de mais algumas informações para criar sua conta.</p>
+				<div class="form">
+					<div class="row">
+						<div class="col">
+							<div class="form-group custom-material">
+								<input type="text" name="nome" class="form-control custom-field valida valida-empty">
+								<label for="nome">Nome</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group custom-material">
+								<input type="text" name="sobrenome" class="form-control custom-field valida valida-empty">
+								<label for="sobrenome">Sobrenome</label>
+							</div>
+						</div>	
+						<div class="col-12">
+							<div class="form-group custom-material">
+								<input type="email" name="email-cad" class="form-control custom-field valida valida-email">
+								<label for="email-cad">E-mail</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group custom-material">
+								<input type="text" name="cpf-cad" class="form-control custom-field valida valida-cpf" data-mask="000.000.000-00">
+								<label for="cpf-cad">CPF</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group custom-material">
+								<input type="text" name="datanascimento-cad" class="form-control custom-field valida valida-data" data-mask="99/99/9999">
+								<label for="datanascimento-cad">Nascimento</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group custom-material">
+								<input type="text" name="tel-cad" class="form-control custom-field mask-tel-cel valida valida-fone">
+								<label for="tel-cad">Telefone</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group custom-material">
+								<input type="password" name="senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
+								<label for="senha-cad">Senha</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group custom-material">
+								<input type="password" name="confirme-senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
+								<label for="confirme-senha-cad">Confirme sua senha</label>
+							</div>
+						</div>
+						<div class="col-12">	
+							<div class="form-group">
+								<button class="btn btn-default btn-full disabled">Cadastrar</button>
+							</div>
+						</div>				
+					</div>
+					
+					<div class="form-group">
+						<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>    
+
+	<script type="text/javascript" src="assets/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
