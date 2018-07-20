@@ -90,7 +90,7 @@ a.btn-link:hover { color: #777; }
 }
 
 .logo-menu { padding: 15px 0; }
-.logo-menu .logo { width: 100%; max-width: 180px; margin-left: 33px; }
+.logo-menu .logo { width: 100%; max-width: 180px; margin: auto; }
 .nav-default { margin-top: 25px; }
 .nav-default .menu { float: right; }
 .nav-default .menu li { display: inline-block; margin-left: 30px; transition: all 0.5s ease 0s; position: relative; }
@@ -138,9 +138,9 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .form-search-veiculo .btn { width: 54px; float: left; background-color: #606062; color: #fff; }
 .form-search-veiculo .select-veiculo { 
     width: 100%; 
-    height: 38px; 
+    height: 35px; 
     overflow: hidden;
-    line-height: 38px;
+    line-height: 35px;
     background-color: #606062; 
     display: inline-block; 
     color: #fff;
@@ -153,6 +153,9 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .form-search-veiculo .select-veiculo .fas { position: absolute; top: 10px; right: 10px; }
 .form-search-veiculo .select-label { width: auto; float: right; background-color: transparent; color: #606062; text-align: right; }
 .form-search-veiculo .select-light { background-color: #E6E6E6; color: #606062; }
+
+.form-search-veiculo .search,
+.form-search-veiculo .btn { height: 35px;  }
 
 /*Define um estilo para o banner principal*/
 .session-banner .owl-item .legend { 
@@ -797,6 +800,8 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     .sm-center { margin: auto; display: table; }
     .sm-mg-top { margin-top: 20px; }
 
+    .logo-menu .logo { margin: 0; }
+
     .logo-menu .col-sm-4 { width: auto; max-width: none; position: relative; z-index: 1; }
     .logo-menu .col-sm-8 { width: 100%; max-width: none; position: absolute; top: 50%; right: 0; transform: translateY(-50%); }
     .logo img { max-width: 200px; }
@@ -887,11 +892,11 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 
 @media screen and (max-width: 700px) {
     .session-header-main { height: 85px; }
+    .logo img { max-width: 130px; }
     .session-banner.mg-top { margin-top: 0; }
 }
 
-@media screen and (max-width: 400px) {    
-    .logo img { max-width: 130px; }
+@media screen and (max-width: 400px) {
     .show-sm .bt { margin: 0 3px; }
     .session-banner .owl-item .legend h3 { font-size: 14pt; text-align: center; margin: auto; }
     .session-banner .owl-dots { top: -30px; }
