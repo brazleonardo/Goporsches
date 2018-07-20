@@ -32,9 +32,9 @@ button:focus { outline: none; box-shadow: none; }
 .btn-default:link,
 .btn-default:active,
 .btn-default:active:focus, 
-.btn-default:focus { background-color: #4b5e6b; color: #fff; }
-.btn-default:link { background-color: #4b5e6b; }
-.btn-default:link:hover { background-color: #4b5e6b; }
+.btn-default:focus { background-color: #606062; color: #fff; }
+.btn-default:link { background-color: #606062; }
+.btn-default:link:hover { background-color: #606062; }
 
 .btn-green { background-color: #cc2401; color: #fff; }
 .btn-green:hover,
@@ -89,6 +89,8 @@ a.btn-link:hover { color: #777; }
     top: 0;
 }
 
+#email-newsletter { background-color: #E6E6E6; }
+
 .session-header-main { height: 150px; position: fixed; top: 0; left: 0; background-color: #fff; z-index: 100; box-shadow: 0 0 5px rgba(30, 30, 30, 0.4); }
 .logo-menu { padding: 15px 0; }
 .logo-menu .logo { width: 100%; max-width: 180px; margin: auto; }
@@ -130,7 +132,7 @@ body:not(.menu-resp-active) .nav-default .menu li:before {
 }
 body:not(.menu-resp-active) .nav-default .menu li:hover:before { width: 50%; opacity: 1; }
 body:not(.menu-resp-active) .nav-default .menu li a:hover,
-body:not(.menu-resp-active) .nav-default .menu li a:hover span { color: #4b5e6b; }
+body:not(.menu-resp-active) .nav-default .menu li a:hover span { color: #606062; }
 body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-item-car { color: #fff; }
 .nav-default .menu li.show-sm { display: none; }
 .show-sm .has-item-car { width: 20px; height: 20px; line-height: 20px; }
@@ -386,7 +388,7 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .session-detalhes-produtos .pull-left span,
 .session-detalhes-produtos .pull-left strong { display: block; line-height: 18px; padding-left: 10px; font-size: 14px; }
 .session-detalhes-produtos .pull-left span { margin-bottom: 10px; }
-.session-detalhes-produtos .sobre-prod .fas { color: #627079; font-size: 18px; }
+.session-detalhes-produtos .sobre-prod .fas { color: #606062; font-size: 18px; }
 .session-detalhes-produtos .detalhes-produto { margin-top: 20px; }
 .session-detalhes-produtos .detalhes-produto .subtitle { font-size: 18px; margin-bottom: 30px; }
 .session-detalhes-produtos .detalhes-produto .d-block { margin-bottom: 5px; }
@@ -512,8 +514,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .session div { transition: all 0.5s ease 0s; }
 
 /*Define o estilo para o footer*/
-.session-footer { background-color: #ddd; padding: 10px 0; }
-.session-footer .text-small {  }
+.session-footer { background-color: #ddd; padding: 10px 0; position: relative; }
 .session-footer .nav-footer { float: left; }
 .session-footer .nav-footer ul { margin-bottom: 0; }
 .session-footer .nav-footer li { display: inline-block; margin: 0 0 0 10px; color: #ccc; font-weight: 300; font-size: 13px; position: relative; }
@@ -530,12 +531,12 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     opacity: 0;
 }
 .session-footer .nav-footer li:hover:before { width: 50%; opacity: 1; }
-.session-footer .nav-footer li a { color: #627079; }
-.session-footer .nav-footer a .fab { color: #627079; font-size: 14px; }
+.session-footer .nav-footer li a { color: #606062; }
+.session-footer .nav-footer a .fab { color: #606062; font-size: 14px; }
 .session-footer .card-cred { float: right; }
-.session-footer .card-social { float: left; }
-.session-footer .card-cred span { color: #627079; font-size: 28px; float: left; margin: 0 3px; }
-.session-footer .card-cred .label { color: #627079; font-weight: 300; font-size: 13px; position: relative; top: 3px; }
+.session-footer .card-center { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); }
+.session-footer .card-cred span { color: #606062; font-size: 28px; float: left; margin: 0 3px; }
+.session-footer .card-cred .label { color: #606062; font-weight: 300; font-size: 13px; position: relative; top: 3px; }
 
 .breadcrumb { 
     background-color: transparent; 
@@ -549,6 +550,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 #modal-select-veiculo .breadcrumb { 
     display: none;
     padding: 0px 15px; 
+    margin-top: 0;
 }
 #modal-select-veiculo .breadcrumb li {
     display: inline-block;
@@ -898,7 +900,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     .session-detalhes-produtos .d-block .text-sm-full { display: block; padding-left: 0; }
 
     .session-footer .nav-footer{ width: 100%; float: left; text-align: center; }
-    .session-footer .card-cred { float: none; display: table; margin: auto; padding-top: 10px; }
+    .session-footer .card-cred { float: none; display: table; margin: auto; padding-top: 10px; position: static; transform: translateX(0); }
 }
 
 @media screen and (max-width: 700px) {
