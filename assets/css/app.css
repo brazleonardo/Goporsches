@@ -908,7 +908,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 }
 
 @media screen and (max-width: 400px) {
-    .show-sm .bt { margin: 0 3px; }
+    .show-sm .bt { margin: 0 8px; }
     .session-banner .owl-item .legend h3 { font-size: 14pt; text-align: center; margin: auto; }
     .session-banner .owl-dots { top: -30px; }
 
