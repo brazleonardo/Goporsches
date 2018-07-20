@@ -776,28 +776,13 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 /*Redefino o tamanho do container-fluid*/
 .container-fluid { width: 100%; max-width: 160  0px; }
 
-@media screen and (max-width: 991px) {
-
-	.session-banner .owl-item .legend { height: 50%; }
-	.session-banner .owl-item .legend h3 { max-width: 320px; font-size: 20pt; }
-
-    .session-main .row .col-lg { order: -1; margin-bottom: 30px; }
-
-    .session-detalhes-produtos .card-columns { 
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    .session-detalhes-produtos .order-1 { order: -1; }
-    .session-detalhes-produtos .card { max-width: 100%; flex-grow: 1; padding: 0 15px; }
-    .session-detalhes-produtos .image img { display: table; margin: auto; }
+@media screen and (max-width: 1080px) {
+	.nav-default .menu li { margin-left: 15px; }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
 
-    body { padding-top: 85px; }
+	body { padding-top: 85px; }
 
     .text-sm-full { width: 100%; display: block; }
     .sm-center { margin: auto; display: table; }
@@ -805,10 +790,10 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 
     .logo-menu .logo { margin: 0; }
 
-    .logo-menu .col-sm-4 { width: auto; max-width: none; position: relative; z-index: 1; }
-    .logo-menu .col-sm-8 { width: 100%; max-width: none; position: absolute; top: 50%; right: 0; transform: translateY(-50%); }
+    .logo-menu .col-xl-2 { width: auto; max-width: none; position: relative; z-index: 1; }
+    .logo-menu .col-xl-10 { width: 100%; max-width: none; position: absolute; top: 50%; right: 0; transform: translateY(-50%); }
     .logo img { max-width: 200px; }
-    .session-header-main { height: 120px; }
+    .session-header-main { height: 100px; }
 
     .show-sm { display: block; }
     .show-menu-sm span {
@@ -869,6 +854,29 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     .nav-default .menu li a span { color: #fff; margin-right: 5px; }
     .nav-default .menu li.show-sm { float: none; display: block; }
     .nav-default .menu li.show-sm .form-search-veiculo { width: 100%; float: left; padding: 20px; margin-bottom: 10px; }
+
+	.session-banner { margin-top: 16px; }
+	.breadcrumb { margin-top: 0; }
+	.session-banner .owl-item .legend { height: 50%; }
+	.session-banner .owl-item .legend h3 { max-width: 320px; font-size: 20pt; }
+
+    .session-main .row .col-lg { order: -1; margin-bottom: 30px; }
+
+    .session-detalhes-produtos .card-columns { 
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .session-detalhes-produtos .order-1 { order: -1; }
+    .session-detalhes-produtos .card { max-width: 100%; flex-grow: 1; padding: 0 15px; }
+    .session-detalhes-produtos .image img { display: table; margin: auto; }
+}
+
+@media screen and (max-width: 768px) {
+
+    
 
     .session-banner.mg-top { margin-top: 35px; }
 
