@@ -847,13 +847,13 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     body.menu-resp-active .nav-default { transform: translateX(0); }
     body.menu-resp-active .nav-default .menu { transform: translateX(0); }
 
-    .nav-default .menu li { display: block; border-bottom: 1px solid rgba(60, 60, 60, 0.5); margin-left: 0; }
+    .nav-default .menu li { width: 100%; float: left; display: block; border-bottom: 1px solid rgba(60, 60, 60, 0.5); margin-left: 0; }
     .nav-default .menu li a { display: block; padding: 8px 20px; color: #fff; }  
     .nav-default .menu li a.open-to-car .has-item-car { top: 6px; left: 18px; }
 
     .nav-default .menu li a span { color: #fff; margin-right: 5px; }
     .nav-default .menu li.show-sm { float: none; display: block; }
-    .nav-default .menu li.show-sm .form-search-veiculo { width: 100%; float: left; padding: 20px; margin-bottom: 10px; }
+    .nav-default .menu li.show-sm .form-search-veiculo { width: 100%; float: left; padding: 20px; }
 
 	.session-banner { margin-top: 16px; }
 	.breadcrumb { margin-top: 0; }
