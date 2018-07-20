@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; vertical-align: baseline; outline: none; }
 
 body {
-    color: #2c3840;
+    color: #606062;
     font-family: 'Open Sans',sans-serif;
     overflow-x: hidden;
 }
@@ -27,7 +27,7 @@ button:active:focus,
 button:focus { outline: none; box-shadow: none; }
 
 .btn-full { width: 100%; }
-.btn-default { background-color: #2c3840; color: #fff; }
+.btn-default { background-color: #606062; color: #fff; }
 .btn-default:hover,
 .btn-default:link,
 .btn-default:active,
@@ -45,10 +45,10 @@ button:focus { outline: none; box-shadow: none; }
 .btn-green:link { background-color: #cc2401; }
 .btn-green:link:hover { background-color: #9e2a12; }
 
-a.btn-link { color: #2c3840; }
+a.btn-link { color: #606062; }
 a.btn-link:hover,
 a.btn-link:link, 
-a.btn-link:focus { text-decoration: none; color: #2c3840; }
+a.btn-link:focus { text-decoration: none; color: #606062; }
 a.btn-link:hover { color: #777; }
 
 .disabled,
@@ -82,7 +82,7 @@ a.btn-link:hover { color: #777; }
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
-.show-sm .bt:hover { color: #2c3840; }
+.show-sm .bt:hover { color: #606062; }
 .bt.show-menu-sm {
     width: 35px;
     height: 40px;
@@ -90,10 +90,11 @@ a.btn-link:hover { color: #777; }
 }
 
 .logo-menu { padding: 15px 0; }
+.logo-menu .logo { width: 100%; max-width: 180px; margin-left: 33px; }
 .nav-default { margin-top: 25px; }
 .nav-default .menu { float: right; }
 .nav-default .menu li { display: inline-block; margin-left: 30px; transition: all 0.5s ease 0s; position: relative; }
-.nav-default .menu li a { color: #2c3840; font-weight: 300; transition: all 0.3s ease-in-out; }
+.nav-default .menu li a { color: #606062; font-weight: 300; transition: all 0.3s ease-in-out; }
 .nav-default .menu li a.open-to-car span.has-item-car { color: #fff; }
 .open-to-car { position: relative; }
 .has-item-car { 
@@ -107,7 +108,7 @@ a.btn-link:hover { color: #777; }
     color: #fff;
     display: block;
     border-radius: 50%; 
-    background-color: #ab2929; 
+    background-color: #cc2401; 
     position: absolute;
     top: -5px;
     left: -1px;
@@ -134,13 +135,13 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .show-sm .has-item-car { width: 20px; height: 20px; line-height: 20px; }
 
 .form-search-veiculo .search { width: calc(100% - 54px); float: left; background-color: #E6E6E6; }
-.form-search-veiculo .btn { width: 54px; float: left; background-color: #2c3840; color: #fff; }
+.form-search-veiculo .btn { width: 54px; float: left; background-color: #606062; color: #fff; }
 .form-search-veiculo .select-veiculo { 
     width: 100%; 
     height: 38px; 
     overflow: hidden;
     line-height: 38px;
-    background-color: #2c3840; 
+    background-color: #606062; 
     display: inline-block; 
     color: #fff;
     padding: 0 15px;
@@ -150,10 +151,37 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 }
 .form-search-veiculo .select-veiculo.select-light:hover { box-shadow: inset 0 0 1px #333; }
 .form-search-veiculo .select-veiculo .fas { position: absolute; top: 10px; right: 10px; }
-.form-search-veiculo .select-label { width: auto; float: right; background-color: transparent; color: #2c3840; text-align: right; }
-.form-search-veiculo .select-light { background-color: #E6E6E6; color: #2c3840; }
+.form-search-veiculo .select-label { width: auto; float: right; background-color: transparent; color: #606062; text-align: right; }
+.form-search-veiculo .select-light { background-color: #E6E6E6; color: #606062; }
 
 /*Define um estilo para o banner principal*/
+.session-banner .owl-item .legend { 
+	width: 100%;
+	height: 30%; 
+	background-image: linear-gradient(to bottom, transparent, #000);
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+}
+.session-banner .owl-item .legend:before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	background-image: linear-gradient(to bottom, transparent, #000);
+}
+.session-banner .owl-item .legend h3 { 
+	width: 100%;
+	max-width: 500px;
+	color: #fff; 
+	font-size: 25pt;
+	text-align: center; 
+	position: relative; 
+	transition: all .6s ease-in-out;
+	transform: translateX(10%);
+	opacity: 0;
+}
+.session-banner .owl-item.active .legend h3 { transform: translateX(0); opacity: 1; }
 .session-banner .owl-dots {
     display: table;
     margin: auto;
@@ -187,14 +215,14 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .session-modelos-veliculos .owl-next { right: -40px; }
 .session-modelos-veliculos .label {
     font-weight: 300;
-    color: #2c3840; 
+    color: #606062; 
     display: block; 
     text-align: center; 
 }
 
 .session-main .legend { 
     display: block; 
-    background-color: #2c3840; 
+    background-color: #606062; 
     text-align: center; 
     color: #fff; 
     padding: 5px 15px;
@@ -258,7 +286,7 @@ body:not(.menu-resp-active) .nav-default .menu li:hover a.open-to-car span.has-i
 .sidebar .nav-menu li a { 
     display: block;
     padding: 5px 25px;
-    color: #2c3840; 
+    color: #606062; 
     font-weight: 300;
     transition: all .3s ease-in-out;
     position: relative;
@@ -390,7 +418,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
     height: 22px; 
     line-height: 22px; 
     font-weight: 300; 
-    color: #2c3840; 
+    color: #606062; 
     font-size: 28px; 
     display: block; 
     text-align: center; 
@@ -417,7 +445,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
 .session-carrinho .items li.no-item-car { height: 100%; border-bottom: 0; }
 .session-carrinho .items li.no-item-car span { font-size: 40px; display: table; margin: auto auto 10px; }
 .session-carrinho .items li.no-item-car .subtitle { text-align: center; }
-.session-carrinho .items .remove-item { width: 20px; height: 20px; line-height: 20px; text-align: center; float: right; color: #2c3840; font-size: 16px; }
+.session-carrinho .items .remove-item { width: 20px; height: 20px; line-height: 20px; text-align: center; float: right; color: #606062; font-size: 16px; }
 .session-carrinho .items .controls { padding-top: 5px; }
 .session-carrinho .items .controls { float: left; }
 .session-carrinho .items .controls .btn,
@@ -449,7 +477,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
 .session-carrinho .footer-info .footer-content li span.text-strong { font-weight: 700; }
 .session-carrinho .footer-info .btn { font-size: 14px; font-weight: 300; text-transform: uppercase; }
 .session-carrinho .btn-login,
-.session-carrinho .btn-cadastro { display: table; margin: auto; color: #2c3840; }
+.session-carrinho .btn-cadastro { display: table; margin: auto; color: #606062; }
 
 body.show-carrinho { overflow: hidden; }
 body.show-carrinho .session-carrinho { transform: translateX(0);  opacity: 1;  }
@@ -497,7 +525,9 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 }
 .session-footer .nav-footer li:hover:before { width: 50%; opacity: 1; }
 .session-footer .nav-footer li a { color: #627079; }
+.session-footer .nav-footer a .fab { color: #627079; font-size: 14px; }
 .session-footer .card-cred { float: right; }
+.session-footer .card-social { float: left; }
 .session-footer .card-cred span { color: #627079; font-size: 28px; float: left; margin: 0 3px; }
 .session-footer .card-cred .label { color: #627079; font-weight: 300; font-size: 13px; position: relative; top: 3px; }
 
@@ -509,7 +539,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 
 /*Define um estilo para o modal*/
 .modal .modal-header { border-bottom: 0; }
-.modal .modal-title { font-size: 18px; color: #2c3840; }
+.modal .modal-title { font-size: 18px; color: #606062; }
 #modal-select-veiculo .breadcrumb { 
     display: none;
     padding: 0px 15px; 
@@ -531,7 +561,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     display: table; 
     padding: 3px 10px; 
     background-color: #eee;
-    color: #2c3840;
+    color: #606062;
     font-size: 14px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -575,7 +605,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     transition: all .3s ease-in-out;
 }
 .form-group.custom-material.in { border-bottom-color: #9a9898; }
-.form-group.custom-material.in label { top: 5px; font-size: 12px; color: #2c3840; }
+.form-group.custom-material.in label { top: 5px; font-size: 12px; color: #606062; }
 .form-group.custom-material.has-error { border-color: #ce173d;  }
 .form-group.custom-material.validated { padding-right: 20px; border-bottom-color: #36B78A; }
 .form-group.custom-material.validated label { color: #36B78A; }
@@ -607,7 +637,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     width: 0; 
     height: 0; 
     border: 7px solid transparent;
-    border-top: 7px solid #2c3840;
+    border-top: 7px solid #606062;
     position: absolute;
     top: 18px;
     right: 10px;
@@ -742,6 +772,9 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 
 @media screen and (max-width: 991px) {
 
+	.session-banner .owl-item .legend { height: 50%; }
+	.session-banner .owl-item .legend h3 { max-width: 320px; font-size: 20pt; }
+
     .session-main .row .col-lg { order: -1; margin-bottom: 30px; }
 
     .session-detalhes-produtos .card-columns { 
@@ -781,7 +814,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
         display: block;
         transition: all .3s ease-in-out;
     }
-    .show-menu-sm:hover span { background-color: #2c3840; }
+    .show-menu-sm:hover span { background-color: #606062; }
     body.menu-resp-active .bt.show-menu-sm { top: 3px; }
     body.menu-resp-active .show-menu-sm span { width: 30px; }
     body.menu-resp-active .show-menu-sm span:nth-child(1)  { top: 6px; transform: rotate(-45deg); }
@@ -835,6 +868,9 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     .session-main .banner-pecas li .img-2, 
     .session-main .banner-pecas li .img-3 { width: 100% !important; }
 
+    .session-banner .owl-item .legend { height: 80%; }
+	.session-banner .owl-item .legend h3 { font-size: 18pt; }
+
     .form-search-veiculo .select-label { text-align: center; }
     .form-search-veiculo.mg-top { margin-top: 5px; }
 
@@ -857,5 +893,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 @media screen and (max-width: 400px) {    
     .logo img { max-width: 130px; }
     .show-sm .bt { margin: 0 3px; }
+    .session-banner .owl-item .legend h3 { font-size: 14pt; text-align: center; margin: auto; }
+    .session-banner .owl-dots { top: -30px; }
 
 }
