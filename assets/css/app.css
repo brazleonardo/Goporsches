@@ -73,7 +73,7 @@ a.btn-link:hover { color: #777; }
 .show-sm .bt { 
     background-color: transparent; 
     border: 0; 
-    color: #627582; 
+    color: #606062; 
     font-size: 23px; 
     float: left; 
     position: relative; 
@@ -804,7 +804,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
         height: 3px;
         position: relative;
         margin-top: 5px;
-        background-color: #627582;
+        background-color: #606062;
         content: "";
         float: left;
         display: block;
@@ -840,7 +840,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
     .nav-default .menu {
         width: calc(100% - 40px);
         height: 100%;
-        background-color: #627582;
+        background-color: #606062;
         position: absolute;
         top: 0;
         right: 0;
