@@ -777,7 +777,7 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .custom-field.error:-ms-input-placeholder {color: #fe2121; font-weight: 300; }
 
 /*Redefino o tamanho do container-fluid*/
-.container-fluid { width: 100%; max-width: 160  0px; }
+.container-fluid { width: 100%; max-width: 1600px; }
 
 @media screen and (max-width: 1080px) {
 	.nav-default .menu li { margin-left: 15px; }
