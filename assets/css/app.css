@@ -514,8 +514,9 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .session div { transition: all 0.5s ease 0s; }
 
 /*Define o estilo para o footer*/
-.session-footer .color { width: 100%; float: left; padding: 10px 0; position: relative;  }
+.session-footer .color { width: 100%; float: left; padding: 10px 0; }
 .session-footer .color-dark { background-color: #ddd; }
+.session-footer .container .container-fluid { position: relative; }
 .session-footer .nav-footer { float: left; }
 .session-footer .nav-footer ul { margin-bottom: 0; }
 .session-footer .nav-footer li { display: inline-block; margin: 0 0 0 10px; color: #ccc; font-weight: 300; font-size: 13px; position: relative; }
