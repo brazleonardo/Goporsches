@@ -514,7 +514,8 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .session div { transition: all 0.5s ease 0s; }
 
 /*Define o estilo para o footer*/
-.session-footer { background-color: #ddd; padding: 10px 0; position: relative; }
+.session-footer .color { width: 100%; float: left; padding: 10px 0; position: relative;  }
+.session-footer .color-dark { background-color: #ddd; }
 .session-footer .nav-footer { float: left; }
 .session-footer .nav-footer ul { margin-bottom: 0; }
 .session-footer .nav-footer li { display: inline-block; margin: 0 0 0 10px; color: #ccc; font-weight: 300; font-size: 13px; position: relative; }
@@ -533,8 +534,8 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .session-footer .nav-footer li:hover:before { width: 50%; opacity: 1; }
 .session-footer .nav-footer li a { color: #606062; }
 .session-footer .nav-footer a .fab { color: #606062; font-size: 14px; }
-.session-footer .card-cred { float: right; }
-.session-footer .card-center { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); }
+.session-footer .card-right { position: absolute; right: 15px; top:8px; }
+.session-footer .card-center { display: table; margin: auto; }
 .session-footer .card-cred span { color: #606062; font-size: 28px; float: left; margin: 0 3px; }
 .session-footer .card-cred .label { color: #606062; font-weight: 300; font-size: 13px; position: relative; top: 3px; }
 
