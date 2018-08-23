@@ -33,6 +33,8 @@
 			this.helperContinuarPagamento();
 			this.helperExibeCadastro();
 			this.helperExibeLogin();
+			this.helperLogar();
+			this.helperMontaCartao();
 			this.helperEsqueciSenha();
 			this.helperHabilitaButton();
 			this.helperMaskTelOrCel();
@@ -57,6 +59,30 @@
             
             });
             
+        },
+
+         /**
+		* Função que cria um SVG com um loading.
+		* @method helperSVGLoading
+		*/
+        helperSVGLoading: function(){
+        	var $svg = `
+				<div class="loader-svg">
+				  <svg version="1.1" id="loader-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				      viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+				  <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+				    <animateTransform attributeType="xml"
+				      attributeName="transform"
+				      type="rotate"
+				      from="0 25 25"
+				      to="360 25 25"
+				      dur="0.6s"
+				      repeatCount="indefinite"/>
+				    </path>
+				  </svg>
+				</div>`;
+
+			return $svg;
         },
 
         /**
@@ -585,7 +611,21 @@
 				</ul>
 				<a href="#" class="btn btn-default btn-full btn-continuar">Continuar com o pagamento</a>`;
 
+			var $content_footer_finalizar = `
+			    <ul class="footer-content">
+					<li class="row">
+						<div class="col">
+							<span class="subtitle">Valor total</span>
+						</div>
+						<div class="col">
+							<span class="total text-right text-strong">R$ `+Init.helperConvertMoneyBr($precoTotal)+`</span>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="btn btn-default btn-full btn-finalizar">Finalizar a Compra</a>`;
+
 			$(".footer-info").html($content_footer);
+			$(".footer-info.footer-finalizar-compra").html($content_footer_finalizar);
 		},
 
 		/**
@@ -656,7 +696,7 @@
 
 					$("body").removeClass("show-carrinho");
 					setTimeout(function(){
-						$(".session-carrinho").removeClass("show-login show-esq-senha show-cadastro");
+						$(".session-carrinho").attr("data-show", "show-carrinho");
 						$(".mask-carrinho").remove();
 					}, 500);
 
@@ -830,7 +870,7 @@
 
 					$("body").removeClass("show-carrinho");					
 					setTimeout(function(){
-						$(".session-carrinho").removeClass("show-login show-esq-senha show-cadastro");
+						$(".session-carrinho").attr("data-show", "show-carrinho");
 						$(".mask-carrinho").remove();
 					}, 500);
 
@@ -881,10 +921,140 @@
 
 				}
 				else {
-					$(".session-carrinho").addClass("show-login");
+					$(".session-carrinho").attr("data-show", "show-login");
 				}
 
 			});
+		},
+
+		/**
+		* Função que faz o login.
+		* @method helperLogar
+		*/
+		helperLogar: function(){
+			$("body").on("click", ".btn-logar", function($event){
+				$event.preventDefault();
+
+				var $element = $(this);
+
+				$element.closest(".main").addClass("loading");
+				$element.closest(".main").append(Init.helperSVGLoading());
+				setTimeout(function(){
+					$(".session-carrinho").attr("data-show", "show-form-payment");
+					$(".loader-svg").remove();
+					$element.closest(".main").removeClass("loading");
+				}, 3000);
+				
+			});
+		},
+
+		helperValidaBandeiraCartao: function($number){
+			var $cartoes = {
+				'amex': /^3[47]/,
+				'hipercard': /^(384100|384140|384160|606282|637095|637568|60(?!11))/,
+				'maestro': /^(5018|5020|5038|6304|6703|6708|6759|676[1-3])/,
+				'mastercard': /^(5[1-5]|677189)|^(222[1-9]|2[3-6]\d{2}|27[0-1]\d|2720)/,
+				'visaelectron': /^4(026|17500|405|508|844|91[37])/,
+				'elo': /^(4011(78|79)|43(1274|8935)|45(1416|7393|763(1|2))|50(4175|6699|67[0-7][0-9]|9000)|627780|63(6297|6368)|650(03([^4])|04([0-9])|05(0|1)|4(0[5-9]|3[0-9]|8[5-9]|9[0-9])|5([0-2][0-9]|3[0-8])|9([2-6][0-9]|7[0-8])|541|700|720|901)|651652|655000|655021)/,
+				'visa': /^4/
+		    };
+		    for (var $cartao in $cartoes) {
+		      if ($number.match($cartoes[$cartao])) {
+		        return $cartao;
+		      }
+		    }
+		    return false;
+		},
+
+		/**
+		* Função que monta o cartão de crédito.
+		* @method helperMontaCartao
+		*/
+		helperMontaCartao: function(){
+
+			//Monta o número do cartão de credito
+			$("#main-form-payment").on("keyup", "input[name='number-card']", function(){
+
+				var $flag = Init.helperValidaBandeiraCartao(this.value.replace(/\D/g, ''));
+
+				/*$(this).val(this.value.replace(/\D/g, ''));
+				$(this).val($(this).val().replace(/(\d{4})(\d{4})(\d{4})(\d{4})+$/, "$1 $2 $3 $4"));				
+				if(this.value.replace(/\D/g, '').length > 16 ){
+			    	$(this).val($(this).val().replace(/(\d{4})(\d{4})(\d{4})(\d{4})|(\d{3})+$/, "$1 $2 $3 $4 $5"));
+				}*/
+				$(this).val(function (index, value) {
+			        return value.replace(/[^a-z0-9]+/gi, '').replace(/(.{4})/g, '$1 ');
+			    });
+
+				if( $(this).val() != "" || $(this).val() != null ){
+					$("#main-form-payment .card-cred .card-numbrer").html($(this).val());
+					$("#main-form-payment .card-cred .card-numbrer").addClass("fhs");
+				}
+				if( $(this).val() == "" || $(this).val() == null ) {
+					$("#main-form-payment .card-cred .card-numbrer").html("•••• •••• •••• ••••");
+					$("#main-form-payment .card-cred .card-numbrer").removeClass("fhs");
+				}
+
+				if( $flag ){
+					$("#main-form-payment .card-cred .card").attr("data-flag", $flag);
+				}
+				else {
+					$("#main-form-payment .card-cred .card").attr("data-flag", "false");
+				}
+
+			});
+			//Monta a data de expiração cartão de credito
+			$("#main-form-payment").on("keyup", "input[name='expiry-date-card']", function(){
+
+				$(this).val(this.value.replace(/\D/g, ''));
+			    $(this).val($(this).val().replace(/(\d{2})(\d{2})+$/, "$1/$2"));
+
+				if( $(this).val() != "" || $(this).val() != null ){
+					$("#main-form-payment .card-cred .card-expiry").html($(this).val());
+					$("#main-form-payment .card-cred .card-expiry").addClass("fhs");
+				}
+				if( $(this).val() == "" || $(this).val() == null ) {
+					$("#main-form-payment .card-cred .card-expiry").html("••/••");
+					$("#main-form-payment .card-cred .card-expiry").removeClass("fhs");
+				}
+
+			});
+			//Monta o nome do dono do cartão de credito
+			$("#main-form-payment").on("keyup", "input[name='name-card']", function(){
+				if( $(this).val() != "" || $(this).val() != null ){
+					$("#main-form-payment .card-cred .card-name").html($(this).val());
+					$("#main-form-payment .card-cred .card-name").addClass("fhs");
+				}
+				if( $(this).val() == "" || $(this).val() == null ) {
+					$("#main-form-payment .card-cred .card-name").html("NOME COMPLETO");
+					$("#main-form-payment .card-cred .card-name").addClass("fhs");
+				}
+
+			});
+			//Monta o CVV do cartão de credito
+			$("#main-form-payment").on("keyup", "input[name='cod-seg-card']", function(){
+
+				$(this).val(this.value.replace(/\D/g, ''));
+			    $(this).val($(this).val().replace(/^(\d{4})+$/, "$1"));
+
+				if( $(this).val() != "" || $(this).val() != null ){
+					$("#main-form-payment .card-cred .card-cvv").html($(this).val());
+					$("#main-form-payment .card-cred .card-cvv").addClass("fhs");
+				}
+				if( $(this).val() == "" || $(this).val() == null ) {
+					$("#main-form-payment .card-cred .card-cvv").html("•••");
+					$("#main-form-payment .card-cred .card-cvv").addClass("fhs");
+				}
+
+			});
+			//Monta exibe o outro lado do cartão
+			$("#main-form-payment").on("focus", "input[name='cod-seg-card']", function(){
+				$("#main-form-payment .card-cred .card").addClass("card-flip");
+			});
+			$("#main-form-payment").on("blur", "input[name='cod-seg-card']", function(){
+				$("#main-form-payment .card-cred .card").removeClass("card-flip");
+			});
+
 		},
 
 		/**
@@ -894,8 +1064,7 @@
 		helperExibeCadastro: function(){
 			$("body").on("click", ".btn-cadastro", function($event){
 				$event.preventDefault();
-				$(".session-carrinho").removeClass("show-login");
-				$(".session-carrinho").addClass("show-cadastro");
+				$(".session-carrinho").attr("data-show", "show-cadastro");
 			});
 		},
 
@@ -906,8 +1075,7 @@
 		helperEsqueciSenha: function(){
 			$("body").on("click", ".btn-esq-senha", function($event){
 				$event.preventDefault();
-				$(".session-carrinho").removeClass("show-login");
-				$(".session-carrinho").addClass("show-esq-senha");
+				$(".session-carrinho").attr("data-show", "show-esq-senha");
 			});
 		},
 
@@ -918,8 +1086,7 @@
 		helperExibeLogin: function(){
 			$("body").on("click", ".btn-login", function($event){
 				$event.preventDefault();
-				$(".session-carrinho").removeClass("show-cadastro show-esq-senha");
-				$(".session-carrinho").addClass("show-login");
+				$(".session-carrinho").attr("data-show", "show-login");
 			});
 		},
 

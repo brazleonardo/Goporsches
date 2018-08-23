@@ -1,5 +1,36 @@
 * { margin: 0; padding: 0; vertical-align: baseline; outline: none; }
 
+/*Importa as fonts referente ao cartão*/
+@font-face {
+    font-family: 'bitstream_vera_sans_monobold';
+    src: url('lib/fonts/bitstream/veramobd-webfont.woff2') format('woff2'),
+         url('lib/fonts/bitstream/veramobd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monoBdOb';
+    src: url('lib/fonts/bitstream/veramobi-webfont.woff2') format('woff2'),
+         url('lib/fonts/bitstream/veramobi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monoOb';
+    src: url('lib/fonts/bitstream/veramoit-webfont.woff2') format('woff2'),
+         url('lib/fonts/bitstream/veramoit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bitstream_vera_sans_monoroman';
+    src: url('lib/fonts/bitstream/veramono-webfont.woff2') format('woff2'),
+         url('lib/fonts/bitstream/veramono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Fonts referente ao cartão*/
+
 body {
     color: #606062;
     font-family: 'Open Sans',sans-serif;
@@ -420,7 +451,6 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
     z-index: -1; 
     opacity: 0; 
 }
-.session-carrinho #main-carrinho { z-index: 1; opacity: 1; }
 .session-carrinho .main .close-carrinho { 
     width: 25px; 
     height: 22px; 
@@ -471,7 +501,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
 
 .session-carrinho .footer-info { 
     width: 100%; 
-    height: 140px;
+    max-height: 140px;
     position: fixed; 
     left: 0; 
     bottom: 0; 
@@ -499,19 +529,281 @@ body.show-carrinho .mask-carrinho {
     z-index: 999;
     background-color: rgba(30, 30, 30, 0.3);
 }
-body.show-carrinho .session-carrinho.show-login #main-carrinho { z-index: -1; opacity: 0; } 
-body.show-carrinho .session-carrinho.show-login #main-login { z-index: 1; opacity: 1; }
+body.show-carrinho .session-carrinho .main { z-index: -1; opacity: 0; }
 
-body.show-carrinho .session-carrinho.show-cadastro #main-login,
-body.show-carrinho .session-carrinho.show-cadastro #main-carrinho { z-index: -1; opacity: 0; } 
-body.show-carrinho .session-carrinho.show-cadastro #main-cadastro { z-index: 1; opacity: 1; }
+body.show-carrinho .session-carrinho[data-show="show-carrinho"] #main-carrinho, 
+body.show-carrinho .session-carrinho[data-show="show-login"] #main-login, 
+body.show-carrinho .session-carrinho[data-show="show-cadastro"] #main-cadastro, 
+body.show-carrinho .session-carrinho[data-show="show-esq-senha"] #main-esq-senha,
+body.show-carrinho .session-carrinho[data-show="show-form-payment"] #main-form-payment { z-index: 1; opacity: 1; }
 
-body.show-carrinho .session-carrinho.show-esq-senha #main-login,
-body.show-carrinho .session-carrinho.show-esq-senha #main-carrinho { z-index: -1; opacity: 0; } 
-body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1; opacity: 1; } 
+body.show-carrinho .session-carrinho .main.loading:before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+body.show-carrinho .session-carrinho .card-cred { 
+    width: 100%; 
+    height: 165px; 
+    max-width: 315px;
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+    perspective: 1000px;
+}
+body.show-carrinho .session-carrinho .card-cred .card {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: relative;
+    transition: transform .4s ease-in-out;
+    transform-style: preserve-3d;
+}
+body.show-carrinho .session-carrinho .card-cred .card.card-flip { transform: rotateY(180deg); }
+body.show-carrinho .session-carrinho .card-cred .front-card,
+body.show-carrinho .session-carrinho .card-cred .back-card { 
+    width: 100%; 
+    height: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .6s ease-in-out;
+    backface-visibility: hidden;
+    background-image: repeating-linear-gradient(45deg, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.05) 1px, 
+        rgba(255, 255, 255, 0) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.03) 4px), 
+    repeating-linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-linear-gradient(210deg, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-radial-gradient(circle at 30% 30%, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-radial-gradient(circle at 70% 70%, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-radial-gradient(circle at 90% 20%, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    repeating-radial-gradient(circle at 15% 80%, 
+        rgba(255, 255, 255, 0) 1px, 
+        rgba(255, 255, 255, 0.03) 2px, 
+        rgba(255, 255, 255, 0.04) 3px, 
+        rgba(255, 255, 255, 0.05) 4px), 
+    linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, 
+        rgba(255, 255, 255, 0.2) 70%, 
+        rgba(255, 255, 255, 0) 90%);
+}
+body.show-carrinho .session-carrinho .card-cred .front-card { background-color: #ddd; }
+body.show-carrinho .session-carrinho .card-cred .back-card { background-color: #ddd; }
+body.show-carrinho .session-carrinho .card-cred .content-card-cred {
+    width: 85%;
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-logo { width: 60px; height: 36px; position: absolute; top: 0; right: 0; }
+.session-carrinho .card-cred .content-card-cred .card-logo svg,
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-logo svg { 
+    width: 100%; 
+    height: auto; 
+    transition: opacity .3s ease-in-out; 
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*Início da identificação dos cartões*/
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .back-card { background-color: #1a216f; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .content-card-cred .card-logo .visa-logo { opacity: 1; }
+
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .back-card { background-color: #012b84; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .content-card-cred .card-logo .visaelectron-logo { opacity: 1; }
+
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .back-card { background-color: #0B2C5F; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .content-card-cred .card-logo .maestro-logo { opacity: 1; }
+
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .back-card { background-color: #1475af; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .content-card-cred .card-logo .mastercard-logo { opacity: 1; }
+
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .back-card { background-color: #b51717; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .content-card-cred .card-logo .hipercard-logo { opacity: 1; }
+
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .front-card,
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .back-card { background-color: #170404; }
+body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .content-card-cred .card-logo .elo-logo { opacity: 1; }
+/*Fim da identificação dos cartões*/
+body.show-carrinho .session-carrinho .card-cred .content-card-cred span {
+    font-family: 'bitstream_vera_sans_monoroman';
+    display: block;
+    color: #fff;
+    opacity: 0.5;
+    line-height: 1;
+    transition: opacity .3s linear;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-chip {
+    width: 50px;
+    height: 35px;
+    position: relative;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-numbrer {
+    font-size: 20px;
+    margin: 20px 0 30px;
+    text-overflow: ellipsis;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-name {
+    width: 190px;
+    max-height: 45px;
+    text-transform: uppercase;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry {
+    width: 50px;
+    font-size: 12px;
+    font-family: 'bitstream_vera_sans_monoroman';
+    letter-spacing: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:before {
+    font-size: 7px;
+    font-family: 'bitstream_vera_sans_monoroman';
+    margin-bottom: 2px;
+    display: block;
+    content: attr(data-before);
+    transition: opacity .3s linear;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:after {
+    font-size: 7px;
+    font-family: 'bitstream_vera_sans_monoroman';
+    margin-top: 2px;
+    margin-right: 5px;
+    display: block;
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    content: attr(data-after);
+    transition: opacity .3s linear;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-chip:before {
+    width: 70%;
+    height: 60%;
+    content: "";
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 20%;
+}
+body.show-carrinho .session-carrinho .card-cred .back-card {
+    transform: rotateY(180deg);
+}
+body.show-carrinho .session-carrinho .card-cred .back-card:after {
+    width: 80%;
+    height: 16%;
+    content: "";
+    display: block;
+    background-color: #FFF;
+    background-image: linear-gradient(#FFF, #FFF);
+    position: absolute;
+    top: 40%;
+    left: 2%;
+}
+body.show-carrinho .session-carrinho .card-cred .back-card .content-card-cred { width: 100%; }
+body.show-carrinho .session-carrinho .card-cred .back-card .card-bar {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+    background-color: #444;
+    opacity: 1;
+    background-image: linear-gradient(#444, #333);
+}
+body.show-carrinho .session-carrinho .card-cred .back-card .card-cvv { position: absolute; top: 40%; left: 85%; font-size: 14px; }
+body.show-carrinho .session-carrinho .card-cred .back-card .card-chip { position: absolute; bottom: 0; left: 2%; }
+body.show-carrinho .session-carrinho .card-cred .back-card .card-chip:after {
+    content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free. It comes with no warranty. For support issues, please visit: github.com/jessepollak/card.";
+    line-height: 1;
+    position: absolute;
+    left: 120%;
+    top: 5%;
+    color: white;
+    font-size: 7px;
+    width: 230px;
+    opacity: 0.5;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body.show-carrinho .session-carrinho .card-cred .content-card-cred span.fhs { opacity: 1; }
+body.show-carrinho .session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:after,
+body.show-carrinho .session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:before { opacity: 0.5; }
+body.show-carrinho .session-carrinho #main-form-payment .form-group { padding-top: 10px; margin-bottom: 0; }
+body.show-carrinho .session-carrinho #main-form-payment label { font-weight: 300; margin-bottom: 0px; font-size: 13px; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control { font-size: 14px; border: 1px solid rgba(30, 30, 30, 0.2); color: #888; padding: .230rem .75rem; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control[name="name-card"] { text-transform: uppercase; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control:focus { box-shadow: none; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control::-webkit-input-placeholder { color: #848384; font-size: 14px; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control:-moz-placeholder { color: #848384; font-size: 14px; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control::-moz-placeholder { color: #848384; font-size: 14px; }
+body.show-carrinho .session-carrinho #main-form-payment .form-control:-ms-input-placeholder { color: #848384; font-size: 14px; }
 
 .session { width: 100%; float: left; }
 .session div { transition: all 0.5s ease 0s; }
+
+/*SVG loading carrinho de compras*/
+.loader-svg {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+}
+.loader-svg svg { width: 100%; height: 100%; }
+.loader-svg svg path,
+.loader-svg svg rect{
+    fill: #36B78A;
+}
 
 /*Define o estilo para o footer*/
 .session-footer .color { width: 100%; float: left; padding: 10px 0; }
@@ -633,12 +925,12 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 /* Customiza select */
 .custom-select {
     width: 100%;
-    height: 40px;
+    height: 30px;
     padding: 6px 15px;
     float: left;
     border: 0;
     border-radius: 0;
-    background-color: #E6E6E6;
+    border: 1px solid rgba(30, 30, 30, 0.2);
     background-image: none;
     position: relative;
     transition: all .6s ease-in-out;
@@ -646,21 +938,20 @@ body.show-carrinho .session-carrinho.show-esq-senha #main-esq-senha { z-index: 1
 .custom-select:after {
     width: 0; 
     height: 0; 
-    border: 7px solid transparent;
-    border-top: 7px solid #606062;
+    border: 5px solid transparent;
+    border-top: 5px solid #606062;
     position: absolute;
-    top: 18px;
+    top: 12px;
     right: 10px;
     content: "";
     transition: transform ease 0.3s;
 }
 .custom-select.error:after { border-top-color: #fe2121; }
-.custom-select:hover { background-color: #E6E6E6; box-shadow: inset 0 0 1px #333; }
 .custom-select.open:after { transform: rotate(180deg); top: 12px; }
 .custom-select .label-select {
     width:  88%; 
-    height: 30px; 
-    line-height: 30px;    
+    height: 16px; 
+    line-height: 16px;    
     font-weight: 400;
     font-size: 14px;
     color: #848384;
