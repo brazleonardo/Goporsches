@@ -32,12 +32,9 @@
 			this.helperLoaderCarrinho();
 			this.helperNavegaCarrinho();
 			this.helperContinuarPagamento();
-			this.helperExibeCadastro();
-			this.helperExibeLogin();
 			this.helperLogar();
 			this.helperMontaCartao();
 			this.helperFinalizarPagamento();
-			this.helperEsqueciSenha();
 			this.helperHabilitaButton();
 			this.helperMaskTelOrCel();
 			this.helperVerifyUserLogged();
@@ -413,9 +410,7 @@
 					$(".tab-content .tab-pane").removeClass("show active");
 					$(".tab-content .tab-pane[id='modelo']").addClass("show active");
 
-				});
-
-								
+				});								
 			}
 		},
 
@@ -925,7 +920,7 @@
 		* @method helperLogar
 		*/
 		helperLogar: function(){
-			$("body").on("click", ".btn-logar", function($event){
+			$("body").on("submit", ".form-login", function($event){
 				$event.preventDefault();
 
 				var $element = $(this);
@@ -979,7 +974,7 @@
 					</header>
 					<div class="content">
 						<p>Digite seu CPF ou e-mail para acessar sua conta.</p>
-						<div class="form">
+						<form class="form form-login">
 							<span class="message-info"></span>
 							<div class="form-group custom-material">
 								<input type="email" name="login" class="form-control custom-field valida valida-email" autocomplete="off">
@@ -992,17 +987,19 @@
 							<div class="form-group">
 								<div class="row">
 									<div class="col">
-										<a href="#" class="btn btn-link btn-esq-senha">Esqueceu a senha?</a>
+										<a href="#" class="btn btn-link btn-esq-senha link-go-car" data-show="show-esq-senha">Esqueceu a senha?</a>
 									</div>
 									<div class="col">
-										<button class="btn btn-default btn-full btn-logar disabled">Login</button>
+										<button type="submit" class="btn btn-default btn-full btn-logar disabled">Login</button>
 									</div>
 								</div>
 							</div>
 							<div class="form-group">					
-								<a href="#" class="btn btn-link btn-cadastro">Faça seu cadastro agora!</a>
+								<a href="#" class="btn btn-link btn-cadastro link-go-car" data-show="show-cadastro">Faça seu cadastro agora!</a>
+								<span class="txt-center">OU</span>
+								<a href="#" class="btn btn-link btn-visitante link-go-car" data-show="show-cadastro-visitante">Entrar como visitante!</a>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>`;
 
@@ -1028,7 +1025,7 @@
 					</header>
 					<div class="content">
 						<p>Digite seu e-mail para recuperar sua senha.</p>
-						<div class="form">
+						<form class="form">
 							<div class="form-group custom-material">
 								<input type="email" name="email" class="form-control custom-field valida valida-email" autocomplete="off">
 								<label for="login">Seu e-mail</label>
@@ -1036,14 +1033,14 @@
 							<div class="form-group">
 								<div class="row">
 									<div class="col">
-										<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
+										<a href="#" class="btn btn-link btn-login link-go-car" data-show="show-login">Efetuar Login</a>
 									</div>
 									<div class="col">
 										<button class="btn btn-default btn-full disabled">Enviar</button>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>`;
 
@@ -1069,7 +1066,7 @@
 					</header>
 					<div class="content">
 						<p>Precisamos de mais algumas informações para criar sua conta.</p>
-						<div class="form">
+						<form class="form">
 							<div class="row">
 								<div class="col">
 									<div class="form-group custom-material">
@@ -1127,9 +1124,77 @@
 							</div>
 							
 							<div class="form-group">
-								<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
+								<a href="#" class="btn btn-link btn-login link-go-car" data-show="show-login">Efetuar Login</a>
+							</div>
+						</form>
+					</div>
+				</div>`;
+
+			return $content;
+		},
+
+		/**
+		* Função que monta o html da tela de cadastro de visitante.
+		* @method helperViewCadastroVisitante
+		*/
+		helperViewCadastroVisitante: function(){
+			var $content = `
+				<div class="main" id="main-cadastro-visitante">
+					<header class="header-carrinho">
+						<div class="row">
+							<div class="col-2">
+								<a href="#" class="close-carrinho">&times;</a>
+							</div>
+							<div class="col">
+								<h3 class="subtitle text-center">VISITANTE</h3>
 							</div>
 						</div>
+					</header>
+					<div class="content">
+						<p>Precisamos de mais algumas informações para efetura sua compra.</p>
+						<form class="form">
+							<div class="row">
+								<div class="col">
+									<div class="form-group custom-material">
+										<input type="text" name="nome-visitante" class="form-control custom-field valida valida-empty">
+										<label for="nome">Nome</label>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group custom-material">
+										<input type="text" name="sobrenome-visitante" class="form-control custom-field valida valida-empty">
+										<label for="sobrenome">Sobrenome</label>
+									</div>
+								</div>	
+								<div class="col-12">
+									<div class="form-group custom-material">
+										<input type="email" name="email-cad-visitante" class="form-control custom-field valida valida-email">
+										<label for="email-cad">E-mail</label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-group custom-material">
+										<input type="text" name="cpf-cad-visitante" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
+										<label for="cpf-cad">CPF</label>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group custom-material">
+										<input type="text" name="tel-cad-visitante" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
+										<label for="tel-cad">Telefone</label>
+									</div>
+								</div>
+								<div class="col-12">	
+									<div class="form-group">
+										<button class="btn btn-default btn-full disabled">Continuar</button>
+									</div>
+								</div>				
+							</div>
+							
+							<div class="form-group">
+								<a href="#" class="btn btn-link btn-login link-go-car" data-show="show-login">Efetuar Login</a>
+							</div>
+						</form>
 					</div>
 				</div>`;
 
@@ -1244,7 +1309,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form">
+						<form class="form">
 							<div class="form-group">
 								<div class="row">
 									<div class="col-8">
@@ -1280,7 +1345,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 					<footer class="footer-info footer-finalizar-compra"></footer>
 				</div>`;
@@ -1571,7 +1636,8 @@
 				$(".session-carrinho .dynamic-session").html(
 					Init.helperViewLogin() +
 					Init.helperViewEsqueciSenha() + 
-					Init.helperViewCadastroUser()
+					Init.helperViewCadastroUser() +
+					Init.helperViewCadastroVisitante()
 				);
 
 				Init.customSelectField();
@@ -1790,39 +1856,6 @@
 			});
 		},
 
-		/**
-		* Função que exibe o cadastro de usuários.
-		* @method helperExibeCadastro
-		*/
-		helperExibeCadastro: function(){
-			$("body").on("click", ".btn-cadastro", function($event){
-				$event.preventDefault();
-				$(".session-carrinho").attr("data-show", "show-cadastro");
-			});
-		},
-
-		/**
-		* Função que exibe o área para pedir nova senha.
-		* @method helperEsqueciSenha
-		*/
-		helperEsqueciSenha: function(){
-			$("body").on("click", ".btn-esq-senha", function($event){
-				$event.preventDefault();
-				$(".session-carrinho").attr("data-show", "show-esq-senha");
-			});
-		},
-
-		/**
-		* Função que exibe o login.
-		* @method helperExibeLogin
-		*/
-		helperExibeLogin: function(){
-			$("body").on("click", ".btn-login", function($event){
-				$event.preventDefault();
-				$(".session-carrinho").attr("data-show", "show-login");
-			});
-		},
-
         /**
 		* Função que habilita  botão.
 		* @method helperValidaButton
@@ -1879,10 +1912,12 @@
 				});
 
 				if( $totalErros == 0 ){
-					$(this).closest(".form").find(".btn-default").removeClass("disabled");					
+					$(this).closest(".form").find(".btn-default").removeClass("disabled");	
+					$(this).closest(".form").find(".btn-default").removeAttr("disabled")				
 				}	
 				else {
 					$(this).closest(".form").find(".btn-default").addClass("disabled");
+					$(this).closest(".form").find(".btn-default").attr("disabled");
 				}	
 			});
 
