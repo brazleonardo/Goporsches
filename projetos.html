@@ -317,7 +317,7 @@
 		</div>
 	</section>
 
-	<aside class="session-carrinho">
+	<aside class="session-carrinho" data-show="show-carrinho">
 		<div class="main" id="main-carrinho">
 			<header class="header-carrinho">
 				<div class="row">
@@ -334,152 +334,8 @@
 			</div>
 			<footer class="footer-info"></footer>
 		</div>
-		<div class="main" id="main-login">
-			<header class="header-carrinho">
-				<div class="row">
-					<div class="col-2">
-						<a href="#" class="close-carrinho">&times;</a>
-					</div>
-					<div class="col">
-						<h3 class="subtitle text-center">LOGIN</h3>
-					</div>
-				</div>
-			</header>
-			<div class="content">
-				<p>Digite seu CPF ou e-mail para acessar sua conta.</p>
-				<div class="form">
-					<div class="form-group custom-material">
-						<input type="email" name="login" class="form-control custom-field valida valida-email" autocomplete="off">
-						<label for="login">Login</label>
-					</div>
-					<div class="form-group custom-material">
-						<input type="password" name="senha" class="form-control custom-field valida valida-senha" autocomplete="off new-password">
-						<label for="senha">Senha</label>
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col">
-								<a href="#" class="btn btn-link btn-esq-senha">Esqueceu a senha?</a>
-							</div>
-							<div class="col">
-								<button class="btn btn-default btn-full disabled">Login</button>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">					
-						<a href="#" class="btn btn-link btn-cadastro">Faça seu cadastro agora!</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="main" id="main-esq-senha">
-			<header class="header-carrinho">
-				<div class="row">
-					<div class="col-2">
-						<a href="#" class="close-carrinho">&times;</a>
-					</div>
-					<div class="col">
-						<h3 class="subtitle text-center">LOGIN</h3>
-					</div>
-				</div>
-			</header>
-			<div class="content">
-				<p>Digite seu e-mail para recuperar sua senha.</p>
-				<div class="form">
-					<div class="form-group custom-material">
-						<input type="email" name="email" class="form-control custom-field valida valida-email" autocomplete="off">
-						<label for="login">Seu e-mail</label>
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col">
-								<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
-							</div>
-							<div class="col">
-								<button class="btn btn-default btn-full disabled">Enviar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="main" id="main-cadastro">
-			<header class="header-carrinho">
-				<div class="row">
-					<div class="col-2">
-						<a href="#" class="close-carrinho">&times;</a>
-					</div>
-					<div class="col">
-						<h3 class="subtitle text-center">CADASTRO</h3>
-					</div>
-				</div>
-			</header>
-			<div class="content">
-				<p>Precisamos de mais algumas informações para criar sua conta.</p>
-				<div class="form">
-					<div class="row">
-						<div class="col">
-							<div class="form-group custom-material">
-								<input type="text" name="nome" class="form-control custom-field valida valida-empty">
-								<label for="nome">Nome</label>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group custom-material">
-								<input type="text" name="sobrenome" class="form-control custom-field valida valida-empty">
-								<label for="sobrenome">Sobrenome</label>
-							</div>
-						</div>	
-						<div class="col-12">
-							<div class="form-group custom-material">
-								<input type="email" name="email-cad" class="form-control custom-field valida valida-email">
-								<label for="email-cad">E-mail</label>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="form-group custom-material">
-								<input type="text" name="cpf-cad" class="form-control custom-field valida valida-cpf" data-mask="000.000.000-00">
-								<label for="cpf-cad">CPF</label>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group custom-material">
-								<input type="text" name="datanascimento-cad" class="form-control custom-field valida valida-data" data-mask="99/99/9999">
-								<label for="datanascimento-cad">Nascimento</label>
-							</div>
-						</div>
-						<div class="col">
-							<div class="form-group custom-material">
-								<input type="text" name="tel-cad" class="form-control custom-field mask-tel-cel valida valida-fone">
-								<label for="tel-cad">Telefone</label>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="form-group custom-material">
-								<input type="password" name="senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-								<label for="senha-cad">Senha</label>
-							</div>
-						</div>
-						<div class="col-12">
-							<div class="form-group custom-material">
-								<input type="password" name="confirme-senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-								<label for="confirme-senha-cad">Confirme sua senha</label>
-							</div>
-						</div>
-						<div class="col-12">	
-							<div class="form-group">
-								<button class="btn btn-default btn-full disabled">Cadastrar</button>
-							</div>
-						</div>				
-					</div>
-					
-					<div class="form-group">
-						<a href="#" class="btn btn-link btn-login">Efetuar Login</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</aside>    
+		<div class="dynamic-session"></div>
+	</aside>   
 
 	<script type="text/javascript" src="assets/js/lib/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
