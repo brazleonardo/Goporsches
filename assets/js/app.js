@@ -1621,7 +1621,7 @@
 					</header>
 					<div class="content">
 						<ul class="lista-card-saved">
-							<li class="ativo">
+							<li class="selecionado">
 								<div class="row">
 									<div class="col-3">`+Init.helperSVGBandeira("mastercard")+`</div>
 									<div class="col">
@@ -1683,7 +1683,18 @@
 			$("body").on("click", ".lista-card-saved .link-excluir", function($event){
 				$event.preventDefault();					
 
-				var $confirmacao = confirm("Deseja excluir o cartão?");
+				var $confirmacao = false;//confirm("Deseja excluir o cartão?");
+
+				var $contentAlert = `
+						<div class="alert-confirm">
+							<span>Deseja realmente excluir?</span>
+							<div class="group-buttons">
+								<button type="button" class="btn btn-default btn-green" data-confirm="yes">Sim</button>
+								<button type="button" class="btn btn-default btn-red" data-confirm="no">Nao</button>
+							</div>
+						</div>`;
+
+				$(this).closest("li").append($contentAlert);
 
 				if($confirmacao){
 					$event.stopImmediatePropagation();
