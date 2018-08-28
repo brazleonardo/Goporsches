@@ -974,14 +974,14 @@
 					</header>
 					<div class="content">
 						<p>Digite seu CPF ou e-mail para acessar sua conta.</p>
-						<form class="form form-login">
+						<form class="form form-login" method="POST" autocomplete="off">
 							<span class="message-info"></span>
 							<div class="form-group custom-material">
-								<input type="email" name="login" class="form-control custom-field valida valida-email" autocomplete="off">
+								<input type="email" name="login" class="form-control custom-field valida valida-email">
 								<label for="login">Login</label>
 							</div>
 							<div class="form-group custom-material">
-								<input type="password" name="senha" class="form-control custom-field valida valida-senha" autocomplete="off new-password">
+								<input type="password" name="senha" class="form-control custom-field valida valida-senha" autocomplete="off">
 								<label for="senha">Senha</label>
 							</div>
 							<div class="form-group">
@@ -990,7 +990,7 @@
 										<a href="#" class="btn btn-link btn-esq-senha link-go-car" data-show="show-esq-senha">Esqueceu a senha?</a>
 									</div>
 									<div class="col">
-										<button type="submit" class="btn btn-default btn-full btn-logar disabled">Login</button>
+										<button type="submit" class="btn btn-default btn-full btn-logar disabled" disabled>Login</button>
 									</div>
 								</div>
 							</div>
@@ -1025,10 +1025,10 @@
 					</header>
 					<div class="content">
 						<p>Digite seu e-mail para recuperar sua senha.</p>
-						<form class="form">
+						<form class="form" method="POST" autocomplete="off">
 							<div class="form-group custom-material">
-								<input type="email" name="email" class="form-control custom-field valida valida-email" autocomplete="off">
-								<label for="login">Seu e-mail</label>
+								<input type="email" name="email-esq-senha" class="form-control custom-field valida valida-email">
+								<label for="email-esq-senha">Seu e-mail</label>
 							</div>
 							<div class="form-group">
 								<div class="row">
@@ -1036,7 +1036,7 @@
 										<a href="#" class="btn btn-link btn-login link-go-car" data-show="show-login">Efetuar Login</a>
 									</div>
 									<div class="col">
-										<button class="btn btn-default btn-full disabled">Enviar</button>
+										<button class="btn btn-default btn-full disabled" disabled>Enviar</button>
 									</div>
 								</div>
 							</div>
@@ -1066,59 +1066,59 @@
 					</header>
 					<div class="content">
 						<p>Precisamos de mais algumas informações para criar sua conta.</p>
-						<form class="form">
+						<form class="form" method="POST" autocomplete="off">
 							<div class="row">
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="nome" class="form-control custom-field valida valida-empty">
-										<label for="nome">Nome</label>
+										<input type="text" name="nome-cad-user" class="form-control custom-field valida valida-empty">
+										<label for="nome-cad-user">Nome</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="sobrenome" class="form-control custom-field valida valida-empty">
-										<label for="sobrenome">Sobrenome</label>
+										<input type="text" name="sobrenome-cad-user" class="form-control custom-field valida valida-empty">
+										<label for="sobrenome-cad-user">Sobrenome</label>
 									</div>
 								</div>	
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="email" name="email-cad" class="form-control custom-field valida valida-email">
-										<label for="email-cad">E-mail</label>
+										<input type="email" name="email-cad-user" class="form-control custom-field valida valida-email">
+										<label for="email-cad-user">E-mail</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="text" name="cpf-cad" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
-										<label for="cpf-cad">CPF</label>
+										<input type="tel" name="cpf-cad-user" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
+										<label for="cpf-cad-user">CPF</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="datanascimento-cad" class="form-control custom-field valida valida-data mask-car-data" maxlength="10">
-										<label for="datanascimento-cad">Nascimento</label>
+										<input type="text" name="datanascimento-cad-user" class="form-control custom-field valida valida-data mask-car-data" maxlength="10">
+										<label for="datanascimento-cad-user">Nascimento</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="tel-cad" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
-										<label for="tel-cad">Telefone</label>
+										<input type="text" name="tel-cad-user" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
+										<label for="tel-cad-user">Telefone</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="password" name="senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-										<label for="senha-cad">Senha</label>
+										<input type="password" name="senha-cad-user" class="form-control custom-field valida valida-senha valida-texto-igual">
+										<label for="senha-cad-user">Senha</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="password" name="confirme-senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-										<label for="confirme-senha-cad">Confirme sua senha</label>
+										<input type="password" name="confirme-senha-cad-user" class="form-control custom-field valida valida-senha valida-texto-igual">
+										<label for="confirme-senha-cad-user">Confirme sua senha</label>
 									</div>
 								</div>
 								<div class="col-12">	
 									<div class="form-group">
-										<button class="btn btn-default btn-full disabled">Cadastrar</button>
+										<button class="btn btn-default btn-full disabled" disabled>Cadastrar</button>
 									</div>
 								</div>				
 							</div>
@@ -1151,42 +1151,42 @@
 						</div>
 					</header>
 					<div class="content">
-						<p>Precisamos de mais algumas informações para efetura sua compra.</p>
-						<form class="form">
+						<p>Precisamos de mais algumas informações para efetuar sua compra.</p>
+						<form class="form" method="POST" autocomplete="off">
 							<div class="row">
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="nome-visitante" class="form-control custom-field valida valida-empty">
-										<label for="nome">Nome</label>
+										<input type="text" name="nome-cad-visitante" class="form-control custom-field valida valida-empty">
+										<label for="nome-visitante">Nome</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
 										<input type="text" name="sobrenome-visitante" class="form-control custom-field valida valida-empty">
-										<label for="sobrenome">Sobrenome</label>
+										<label for="sobrenome-cad-visitante">Sobrenome</label>
 									</div>
 								</div>	
 								<div class="col-12">
 									<div class="form-group custom-material">
 										<input type="email" name="email-cad-visitante" class="form-control custom-field valida valida-email">
-										<label for="email-cad">E-mail</label>
+										<label for="email-cad-visitante">E-mail</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="text" name="cpf-cad-visitante" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
-										<label for="cpf-cad">CPF</label>
+										<input type="tel" name="cpf-cad-visitante" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
+										<label for="cpf-cad-visitante">CPF</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
 										<input type="text" name="tel-cad-visitante" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
-										<label for="tel-cad">Telefone</label>
+										<label for="tel-cad-visitante">Telefone</label>
 									</div>
 								</div>
 								<div class="col-12">	
 									<div class="form-group">
-										<button class="btn btn-default btn-full disabled">Continuar</button>
+										<button class="btn btn-default btn-full disabled" disabled>Continuar</button>
 									</div>
 								</div>				
 							</div>
@@ -1324,7 +1324,7 @@
 							</div>
 							<div class="form-group">
 								<label for="name-card">Nome do Titular</label>
-								<input type="tel" name="name-card" class="form-control">
+								<input type="text" name="name-card" class="form-control">
 							</div>
 							<div class="form-group">
 								<div class="row">
@@ -1485,63 +1485,63 @@
 					</header>
 					<div class="content">
 						<p class="txt-center">Informações necessárias sobre você.</p>
-						<div class="form">
+						<form class="form" method="POST" autocomplete="off">
 							<div class="row">
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="nome" class="form-control custom-field valida valida-empty">
-										<label for="nome">Nome</label>
+										<input type="text" name="nome-update-use" class="form-control custom-field valida valida-empty">
+										<label for="nome-update-use">Nome</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="sobrenome" class="form-control custom-field valida valida-empty">
-										<label for="sobrenome">Sobrenome</label>
+										<input type="text" name="sobrenome-update-use" class="form-control custom-field valida valida-empty">
+										<label for="sobrenome-update-use">Sobrenome</label>
 									</div>
 								</div>	
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="email" name="email-cad" class="form-control custom-field valida valida-email">
-										<label for="email-cad">E-mail</label>
+										<input type="email" name="email-update-use" class="form-control custom-field valida valida-email">
+										<label for="email-update-use">E-mail</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="text" name="cpf-cad" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
-										<label for="cpf-cad">CPF</label>
+										<input type="text" name="cpf-update-use" class="form-control custom-field valida valida-cpf mask-car-cpf" maxlength="14">
+										<label for="cpf-update-use">CPF</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="datanascimento-cad" class="form-control custom-field valida valida-data mask-car-data" maxlength="10">
-										<label for="datanascimento-cad">Nascimento</label>
+										<input type="text" name="datanascimento-update-use" class="form-control custom-field valida valida-data mask-car-data" maxlength="10">
+										<label for="datanascimento-update-use">Nascimento</label>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group custom-material">
-										<input type="text" name="tel-cad" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
-										<label for="tel-cad">Telefone</label>
+										<input type="text" name="tel-update-use" class="form-control custom-field mask-tel-cel valida valida-fone mask-car-fone" maxlength="15">
+										<label for="tel-update-use">Telefone</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="password" name="senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-										<label for="senha-cad">Senha</label>
+										<input type="password" name="senha-update-use" class="form-control custom-field valida valida-senha valida-texto-igual">
+										<label for="senha-update-use">Senha</label>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group custom-material">
-										<input type="password" name="confirme-senha-cad" class="form-control custom-field valida valida-senha valida-texto-igual" autocomplete="off new-password">
-										<label for="confirme-senha-cad">Confirme sua senha</label>
+										<input type="password" name="confirme-senha-update-use" class="form-control custom-field valida valida-senha valida-texto-igual">
+										<label for="confirme-senha-update-use">Confirme sua senha</label>
 									</div>
 								</div>
 								<div class="col-12">	
 									<div class="form-group">
-										<button class="btn btn-default btn-full disabled">Cadastrar</button>
+										<button class="btn btn-default btn-full disabled" disabled>Cadastrar</button>
 									</div>
 								</div>				
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>`;
 
@@ -1917,7 +1917,7 @@
 				}	
 				else {
 					$(this).closest(".form").find(".btn-default").addClass("disabled");
-					$(this).closest(".form").find(".btn-default").attr("disabled");
+					$(this).closest(".form").find(".btn-default").attr("disabled", "disabled");
 				}	
 			});
 

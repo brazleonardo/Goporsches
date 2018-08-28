@@ -431,6 +431,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
 .session-carrinho { 
     width: 100%; 
     max-width: 350px;
+    height: 100%;
     background-color: #fefefe;
     position: fixed;
     top: 0px;
@@ -472,15 +473,16 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
 }
 .session-carrinho .content { height: 100vh; padding: 10px 0; overflow-y: auto; margin-top: 35px; }
 .session-carrinho #main-carrinho .content { height: calc(100vh - 175px); }
+.session-carrinho #main-form-payment .content { height: calc(100vh - 138px); }
 .session-carrinho .content .subtitle { font-size: 14px; font-weight: 300; margin: 0; display: block; }
 .session-carrinho .content p,
 .session-carrinho .content .text-center,
 .session-carrinho .content .btn-link { font-weight: 300; font-size: 14px; }
 .session-carrinho .content .form { padding: 0 15px; }
-.session-carrinho .items { overflow: hidden; }
+.session-carrinho .items { overflow-x: hidden; }
 .session-carrinho .items { height: 100%; margin-bottom: 0; }
 .session-carrinho .items li { border-bottom: 1px solid rgba(30, 30, 30, 0.2); padding-bottom: 10px; margin-bottom: 10px; }
-.session-carrinho .items li.no-item-car { height: 100%; border-bottom: 0; }
+.session-carrinho .items li.no-item-car { height: 100%; border-bottom: 0; margin-bottom: 0; }
 .session-carrinho .items li.no-item-car svg { display: table; margin: auto auto 10px; }
 .session-carrinho .items li.no-item-car .subtitle { text-align: center; }
 .session-carrinho .items .remove-item { width: 20px; height: 20px; line-height: 20px; text-align: center; float: right; color: #606062; font-size: 16px; }
@@ -508,7 +510,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
     border-bottom: 1px solid rgba(30, 30, 30, 0.2); 
     padding: 10px;
 }
-.session-carrinho .footer-info .footer-content { padding: 0 15px; }
+.session-carrinho .footer-info .footer-content { padding: 0 15px; margin-bottom: 5px; }
 .session-carrinho .footer-info .footer-content li { border-bottom: 1px solid rgba(30, 30, 30, 0.2); padding: 5px 0; }
 .session-carrinho .footer-info .footer-content li:last-child { border-bottom: 0; }
 .session-carrinho .footer-info .footer-content li span { display: block; font-size: 14px; font-weight: 300; }
