@@ -550,10 +550,10 @@ body.show-carrinho .session-carrinho[data-show="show-datas-user"] #main-datas-us
 body.show-carrinho .session-carrinho[data-show="show-my-order"] #main-my-order,
 body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-saved { z-index: 1; opacity: 1; }
 
-body.show-carrinho .session-carrinho .custom-select { height: 30px; }
-body.show-carrinho .session-carrinho .custom-select .label-select { height: 16px; line-height: 16px; }
+.session-carrinho .custom-select { height: 30px; }
+.session-carrinho .custom-select .label-select { height: 16px; line-height: 16px; }
 
-body.show-carrinho .session-carrinho .main.loading:before {
+.session-carrinho .main.loading:before {
     width: 100%;
     height: 100%;
     content: "";
@@ -564,7 +564,7 @@ body.show-carrinho .session-carrinho .main.loading:before {
     z-index: 100;
 }
 
-body.show-carrinho .session-carrinho .card-cred { 
+.session-carrinho .card-cred { 
     width: 100%; 
     height: 165px; 
     max-width: 315px;
@@ -573,7 +573,7 @@ body.show-carrinho .session-carrinho .card-cred {
     overflow: hidden;
     perspective: 1000px;
 }
-body.show-carrinho .session-carrinho .card-cred .card {
+.session-carrinho .card-cred .card {
     width: 100%;
     height: 100%;
     border: 0;
@@ -581,9 +581,9 @@ body.show-carrinho .session-carrinho .card-cred .card {
     transition: transform .4s ease-in-out;
     transform-style: preserve-3d;
 }
-body.show-carrinho .session-carrinho .card-cred .card.card-flip { transform: rotateY(180deg); }
-body.show-carrinho .session-carrinho .card-cred .front-card,
-body.show-carrinho .session-carrinho .card-cred .back-card { 
+.session-carrinho .card-cred .card.card-flip { transform: rotateY(180deg); }
+.session-carrinho .card-cred .front-card,
+.session-carrinho .card-cred .back-card { 
     width: 100%; 
     height: 100%; 
     position: absolute;
@@ -635,9 +635,9 @@ body.show-carrinho .session-carrinho .card-cred .back-card {
         rgba(255, 255, 255, 0.2) 70%, 
         rgba(255, 255, 255, 0) 90%);
 }
-body.show-carrinho .session-carrinho .card-cred .front-card { background-color: #ddd; }
-body.show-carrinho .session-carrinho .card-cred .back-card { background-color: #ddd; }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred {
+.session-carrinho .card-cred .front-card { background-color: #ddd; }
+.session-carrinho .card-cred .back-card { background-color: #ddd; }
+.session-carrinho .card-cred .content-card-cred {
     width: 85%;
     height: 85%;
     position: absolute;
@@ -645,9 +645,9 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-logo { width: 60px; height: 36px; position: absolute; top: 0; right: 0; }
+.session-carrinho .card-cred .content-card-cred .card-logo { width: 60px; height: 36px; position: absolute; top: 0; right: 0; }
 .session-carrinho .card-cred .content-card-cred .card-logo svg,
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-logo svg { 
+.session-carrinho .card-cred .content-card-cred .card-logo svg { 
     width: 100%; 
     height: auto; 
     transition: opacity .3s ease-in-out; 
@@ -657,31 +657,31 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-logo sv
     left: 0;
 }
 /*Início da identificação dos cartões*/
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .back-card { background-color: #1a216f; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visa"] .content-card-cred .card-logo .visa-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="visa"] .front-card,
+.session-carrinho .card-cred .card[data-flag="visa"] .back-card { background-color: #1a216f; }
+.session-carrinho .card-cred .card[data-flag="visa"] .content-card-cred .card-logo .visa-logo { opacity: 1; }
 
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .back-card { background-color: #012b84; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="visaelectron"] .content-card-cred .card-logo .visaelectron-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="visaelectron"] .front-card,
+.session-carrinho .card-cred .card[data-flag="visaelectron"] .back-card { background-color: #012b84; }
+.session-carrinho .card-cred .card[data-flag="visaelectron"] .content-card-cred .card-logo .visaelectron-logo { opacity: 1; }
 
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .back-card { background-color: #0B2C5F; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="maestro"] .content-card-cred .card-logo .maestro-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="maestro"] .front-card,
+.session-carrinho .card-cred .card[data-flag="maestro"] .back-card { background-color: #0B2C5F; }
+.session-carrinho .card-cred .card[data-flag="maestro"] .content-card-cred .card-logo .maestro-logo { opacity: 1; }
 
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .back-card { background-color: #1475af; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="mastercard"] .content-card-cred .card-logo .mastercard-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="mastercard"] .front-card,
+.session-carrinho .card-cred .card[data-flag="mastercard"] .back-card { background-color: #1475af; }
+.session-carrinho .card-cred .card[data-flag="mastercard"] .content-card-cred .card-logo .mastercard-logo { opacity: 1; }
 
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .back-card { background-color: #b51717; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="hipercard"] .content-card-cred .card-logo .hipercard-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="hipercard"] .front-card,
+.session-carrinho .card-cred .card[data-flag="hipercard"] .back-card { background-color: #b51717; }
+.session-carrinho .card-cred .card[data-flag="hipercard"] .content-card-cred .card-logo .hipercard-logo { opacity: 1; }
 
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .front-card,
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .back-card { background-color: #170404; }
-body.show-carrinho .session-carrinho .card-cred .card[data-flag="elo"] .content-card-cred .card-logo .elo-logo { opacity: 1; }
+.session-carrinho .card-cred .card[data-flag="elo"] .front-card,
+.session-carrinho .card-cred .card[data-flag="elo"] .back-card { background-color: #170404; }
+.session-carrinho .card-cred .card[data-flag="elo"] .content-card-cred .card-logo .elo-logo { opacity: 1; }
 /*Fim da identificação dos cartões*/
-body.show-carrinho .session-carrinho .card-cred .content-card-cred span {
+.session-carrinho .card-cred .content-card-cred span {
     font-family: 'bitstream_vera_sans_monoroman';
     display: block;
     color: #fff;
@@ -689,19 +689,19 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred span {
     line-height: 1;
     transition: opacity .3s linear;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-chip {
+.session-carrinho .card-cred .content-card-cred .card-chip {
     width: 50px;
     height: 35px;
     position: relative;
     border-radius: 5px;
     background-color: #ccc;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-numbrer {
+.session-carrinho .card-cred .content-card-cred .card-numbrer {
     font-size: 20px;
     margin: 20px 0 30px;
     text-overflow: ellipsis;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-name {
+.session-carrinho .card-cred .content-card-cred .card-name {
     width: 190px;
     max-height: 45px;
     text-transform: uppercase;
@@ -712,7 +712,7 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-name {
     overflow: hidden;
 
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry {
+.session-carrinho .card-cred .content-card-cred .card-expiry {
     width: 50px;
     font-size: 12px;
     font-family: 'bitstream_vera_sans_monoroman';
@@ -721,7 +721,7 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry 
     right: 0;
     bottom: 0;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:before {
+.session-carrinho .card-cred .content-card-cred .card-expiry:before {
     font-size: 7px;
     font-family: 'bitstream_vera_sans_monoroman';
     margin-bottom: 2px;
@@ -729,7 +729,7 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:
     content: attr(data-before);
     transition: opacity .3s linear;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:after {
+.session-carrinho .card-cred .content-card-cred .card-expiry:after {
     font-size: 7px;
     font-family: 'bitstream_vera_sans_monoroman';
     margin-top: 2px;
@@ -741,7 +741,7 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-expiry:
     content: attr(data-after);
     transition: opacity .3s linear;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-chip:before {
+.session-carrinho .card-cred .content-card-cred .card-chip:before {
     width: 70%;
     height: 60%;
     content: "";
@@ -751,10 +751,10 @@ body.show-carrinho .session-carrinho .card-cred .content-card-cred .card-chip:be
     position: absolute;
     top: 20%;
 }
-body.show-carrinho .session-carrinho .card-cred .back-card {
+.session-carrinho .card-cred .back-card {
     transform: rotateY(180deg);
 }
-body.show-carrinho .session-carrinho .card-cred .back-card:after {
+.session-carrinho .card-cred .back-card:after {
     width: 80%;
     height: 16%;
     content: "";
@@ -765,8 +765,8 @@ body.show-carrinho .session-carrinho .card-cred .back-card:after {
     top: 40%;
     left: 2%;
 }
-body.show-carrinho .session-carrinho .card-cred .back-card .content-card-cred { width: 100%; }
-body.show-carrinho .session-carrinho .card-cred .back-card .card-bar {
+.session-carrinho .card-cred .back-card .content-card-cred { width: 100%; }
+.session-carrinho .card-cred .back-card .card-bar {
     width: 100%;
     height: 25%;
     position: absolute;
@@ -775,9 +775,9 @@ body.show-carrinho .session-carrinho .card-cred .back-card .card-bar {
     opacity: 1;
     background-image: linear-gradient(#444, #333);
 }
-body.show-carrinho .session-carrinho .card-cred .back-card .card-cvv { position: absolute; top: 40%; left: 85%; font-size: 14px; }
-body.show-carrinho .session-carrinho .card-cred .back-card .card-chip { position: absolute; bottom: 0; left: 2%; }
-body.show-carrinho .session-carrinho .card-cred .back-card .card-chip:after {
+.session-carrinho .card-cred .back-card .card-cvv { position: absolute; top: 40%; left: 85%; font-size: 14px; }
+.session-carrinho .card-cred .back-card .card-chip { position: absolute; bottom: 0; left: 2%; }
+.session-carrinho .card-cred .back-card .card-chip:after {
     content: "This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free. It comes with no warranty. For support issues, please visit: github.com/jessepollak/card.";
     line-height: 1;
     position: absolute;
@@ -789,24 +789,24 @@ body.show-carrinho .session-carrinho .card-cred .back-card .card-chip:after {
     opacity: 0.5;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred span.fhs { opacity: 1; }
-body.show-carrinho .session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:after,
-body.show-carrinho .session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:before { opacity: 0.5; }
-body.show-carrinho .session-carrinho #main-form-payment .form-group { padding-top: 10px; margin-bottom: 0; }
-body.show-carrinho .session-carrinho #main-form-payment label { font-weight: 300; margin-bottom: 0px; font-size: 13px; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control { font-size: 14px; border: 1px solid rgba(30, 30, 30, 0.2); color: #888; padding: .230rem .75rem; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control.error,
-body.show-carrinho .session-carrinho #main-form-payment .custom-select.error { border-color: #ce173d; }
-body.show-carrinho .session-carrinho #main-form-payment .custom-select.error:after { border-top-color: #ce173d; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control[name="name-card"] { text-transform: uppercase; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control:focus { box-shadow: none; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control::-webkit-input-placeholder { color: #848384; font-size: 14px; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control:-moz-placeholder { color: #848384; font-size: 14px; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control::-moz-placeholder { color: #848384; font-size: 14px; }
-body.show-carrinho .session-carrinho #main-form-payment .form-control:-ms-input-placeholder { color: #848384; font-size: 14px; }
+.session-carrinho .card-cred .content-card-cred span.fhs { opacity: 1; }
+.session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:after,
+.session-carrinho .card-cred .content-card-cred span.card-expiry.fhs:before { opacity: 0.5; }
+.session-carrinho #main-form-payment .form-group { padding-top: 10px; margin-bottom: 0; }
+.session-carrinho #main-form-payment label { font-weight: 300; margin-bottom: 0px; font-size: 13px; }
+.session-carrinho #main-form-payment .form-control { font-size: 14px; border: 1px solid rgba(30, 30, 30, 0.2); color: #888; padding: .230rem .75rem; }
+.session-carrinho #main-form-payment .form-control.error,
+.session-carrinho #main-form-payment .custom-select.error { border-color: #ce173d; }
+.session-carrinho #main-form-payment .custom-select.error:after { border-top-color: #ce173d; }
+.session-carrinho #main-form-payment .form-control[name="name-card"] { text-transform: uppercase; }
+.session-carrinho #main-form-payment .form-control:focus { box-shadow: none; }
+.session-carrinho #main-form-payment .form-control::-webkit-input-placeholder { color: #848384; font-size: 14px; }
+.session-carrinho #main-form-payment .form-control:-moz-placeholder { color: #848384; font-size: 14px; }
+.session-carrinho #main-form-payment .form-control::-moz-placeholder { color: #848384; font-size: 14px; }
+.session-carrinho #main-form-payment .form-control:-ms-input-placeholder { color: #848384; font-size: 14px; }
 
-body.show-carrinho .session-carrinho  #main-payment-error .txt-error,
-body.show-carrinho .session-carrinho  #main-payment-sucesses .txt-sucesses { 
+.session-carrinho  #main-payment-error .txt-error,
+.session-carrinho  #main-payment-sucesses .txt-sucesses { 
     width: 80%; 
     display: table; 
     margin: auto; 
@@ -815,12 +815,12 @@ body.show-carrinho .session-carrinho  #main-payment-sucesses .txt-sucesses {
     transform: translateY(-50%);
     text-align: center;
 }
-body.show-carrinho .session-carrinho  #main-payment-error .txt-error svg,
-body.show-carrinho .session-carrinho  #main-payment-sucesses .txt-sucesses svg { display: table; margin: auto auto 10px; }
-body.show-carrinho .session-carrinho  #main-payment-error .txt-error h3,
-body.show-carrinho .session-carrinho  #main-payment-sucesses .txt-sucesses h3 { font-weight: 300; color: #36B78A; font-size: 20px; text-transform: uppercase; }
-body.show-carrinho .session-carrinho  #main-payment-error .txt-error h3 { color: #bd1736; }
-body.show-carrinho .session-carrinho .btn-go-car { 
+.session-carrinho #main-payment-error .txt-error svg,
+.session-carrinho #main-payment-sucesses .txt-sucesses svg { display: table; margin: auto auto 10px; }
+.session-carrinho #main-payment-error .txt-error h3,
+.session-carrinho #main-payment-sucesses .txt-sucesses h3 { font-weight: 300; color: #36B78A; font-size: 20px; text-transform: uppercase; }
+.session-carrinho  #main-payment-error .txt-error h3 { color: #bd1736; }
+.session-carrinho .btn-go-car { 
     display: table; 
     margin: auto; 
     color: #999; 
@@ -830,7 +830,7 @@ body.show-carrinho .session-carrinho .btn-go-car {
     font-weight: 300;
     text-transform: uppercase; 
 }
-body.show-carrinho .session-carrinho .message-info { 
+.session-carrinho .message-info { 
     font-size: 16px; 
     font-weight: 300; 
     display: block; 
@@ -838,18 +838,18 @@ body.show-carrinho .session-carrinho .message-info {
     text-align: center;
     color: #bd1736;
 }
-body.show-carrinho .session-carrinho .open-data-user { position: absolute; top: 5px; right: 5px; cursor: pointer; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho { margin-top: 10px; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li { width: 100%; float: left; border-bottom: 1px solid #ddd; color: #999; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li a { color: #999; display: block; padding: 6px 15px; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user { padding-bottom: 20px; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user svg { width: 50px; float: left;  margin-right: 10px; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user .info-user { width: calc(100% - 70px); float: left; margin-top: 10px; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user .info-user span { display: block; font-size: 16px; line-height: 1; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user .info-user span.name-user { font-weight: 700; }
-body.show-carrinho .session-carrinho #main-menu-user .menu-carrinho li.user .info-user span.email { font-size: 14px; }
-body.show-carrinho .session-carrinho .lista-card-saved { margin-top: 20px; }
-body.show-carrinho .session-carrinho .lista-card-saved li { 
+.session-carrinho .open-data-user { position: absolute; top: 5px; right: 5px; cursor: pointer; }
+.session-carrinho #main-menu-user .menu-carrinho { margin-top: 10px; }
+.session-carrinho #main-menu-user .menu-carrinho li { width: 100%; float: left; border-bottom: 1px solid #ddd; color: #999; }
+.session-carrinho #main-menu-user .menu-carrinho li a { color: #999; display: block; padding: 6px 15px; }
+.session-carrinho #main-menu-user .menu-carrinho li.user { padding-bottom: 20px; }
+.session-carrinho #main-menu-user .menu-carrinho li.user svg { width: 50px; float: left;  margin-right: 10px; }
+.session-carrinho #main-menu-user .menu-carrinho li.user .info-user { width: calc(100% - 70px); float: left; margin-top: 10px; }
+.session-carrinho #main-menu-user .menu-carrinho li.user .info-user span { display: block; font-size: 16px; line-height: 1; }
+.session-carrinho #main-menu-user .menu-carrinho li.user .info-user span.name-user { font-weight: 700; }
+.session-carrinho #main-menu-user .menu-carrinho li.user .info-user span.email { font-size: 14px; }
+.session-carrinho .lista-card-saved { margin-top: 20px; }
+.session-carrinho .lista-card-saved li { 
     padding: 10px 20px; 
     margin-bottom: 10px; 
     border: 1px solid #ddd; 
@@ -858,19 +858,19 @@ body.show-carrinho .session-carrinho .lista-card-saved li {
     cursor: pointer; 
     position: relative;
 }
-body.show-carrinho .session-carrinho .lista-card-saved li.ativo,
-body.show-carrinho .session-carrinho .lista-card-saved li.selecionado { opacity: 1; }
-body.show-carrinho .session-carrinho .lista-card-saved li.inativo { cursor: default; }
-body.show-carrinho .session-carrinho .lista-card-saved li span { font-size: 14px; display: block; }
-body.show-carrinho .session-carrinho .lista-card-saved li svg { position: relative; top: 50%; transform: translateY(-50%); }
-body.show-carrinho .session-carrinho .lista-card-saved li svg.visa-logo { background-color: #2c32a5; }
-body.show-carrinho .session-carrinho .lista-card-saved li .status { position: absolute; right: 100px; bottom: 0; font-size: 12px; }
-body.show-carrinho .session-carrinho .lista-card-saved li .status.ativo { color: #36B78A; }
-body.show-carrinho .session-carrinho .lista-card-saved li .status.inativo { color: #b73641; }
-body.show-carrinho .session-carrinho .lista-card-saved li .link-excluir { position: absolute; right: 15px; bottom: 0; font-size: 12px; }
-body.show-carrinho .session-carrinho .lista-card-saved li.text-no-card { border: 0; }
-body.show-carrinho .session-carrinho .lista-card-saved li.text-no-card h3 { text-align: center; font-size: 16px; font-weight: 300; margin: 0; }
-body.show-carrinho .session-carrinho .alert-confirm { 
+.session-carrinho .lista-card-saved li.ativo,
+.session-carrinho .lista-card-saved li.selecionado { opacity: 1; }
+.session-carrinho .lista-card-saved li.inativo { cursor: default; }
+.session-carrinho .lista-card-saved li span { font-size: 14px; display: block; }
+.session-carrinho .lista-card-saved li svg { position: relative; top: 50%; transform: translateY(-50%); }
+.session-carrinho .lista-card-saved li svg.visa-logo { background-color: #2c32a5; }
+.session-carrinho .lista-card-saved li .status { position: absolute; right: 100px; bottom: 0; font-size: 12px; }
+.session-carrinho .lista-card-saved li .status.ativo { color: #36B78A; }
+.session-carrinho .lista-card-saved li .status.inativo { color: #b73641; }
+.session-carrinho .lista-card-saved li .link-excluir { position: absolute; right: 15px; bottom: 10px; font-size: 12px; }
+.session-carrinho .lista-card-saved li.text-no-card { border: 0; }
+.session-carrinho .lista-card-saved li.text-no-card h3 { text-align: center; font-size: 16px; font-weight: 300; margin: 0; }
+.session-carrinho .alert-confirm { 
     width: 100%; 
     height: 100%; 
     background-color: rgba(250, 250, 250, 0.9);
@@ -879,11 +879,12 @@ body.show-carrinho .session-carrinho .alert-confirm {
     top: 0;
     left: 0; 
 }
-body.show-carrinho .session-carrinho .alert-confirm span { display: block; color: #555; font-size: 12px; font-weight: 700; text-align: center; }
-body.show-carrinho .session-carrinho .alert-confirm .group-buttons  { display: table; margin: auto; }
-body.show-carrinho .session-carrinho .alert-confirm .group-buttons button { font-size: 12px; padding: 5px 15px; margin: 0 5px; line-height: 1; }
-body.show-carrinho .session-carrinho .alert-confirm .group-buttons .btn-green { background-color: #36b78a; }
-body.show-carrinho .session-carrinho .alert-confirm .group-buttons .btn-red { background-color: #b73641; }
+.session-carrinho .lista-card-saved li.has-alert { opacity: 1; }
+.session-carrinho .alert-confirm span { display: block; color: #555; font-size: 12px; font-weight: 700; text-align: center; }
+.session-carrinho .alert-confirm .group-buttons  { display: table; margin: auto; }
+.session-carrinho .alert-confirm .group-buttons button { font-size: 12px; padding: 5px 15px; margin: 0 5px; line-height: 1; }
+.session-carrinho .alert-confirm .group-buttons .btn-green { background-color: #36b78a; }
+.session-carrinho .alert-confirm .group-buttons .btn-red { background-color: #b73641; }
 
 .session { width: 100%; float: left; }
 .session div { transition: all 0.5s ease 0s; }
