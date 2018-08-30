@@ -1658,22 +1658,22 @@
 							<li>
 								<div class="row">
 									<div class="col-3">
-										<img src="assets/images/produto01lg.jpg" class="img-fluid" alt="Produto 1">
+										<img src="assets/images/produto04.png" class="img-fluid" alt="Produto 1">
 									</div>
 									<div class="col">
 										<span class="subtitle">Produto 1</span>
-										<span class="preco">R$ 289,90</span>
+										<span class="info">Data: 30/08/2018. Valor: R$ 289,90</span>
 									</div>
 								</div>
 							</li>
 							<li>
 								<div class="row">
 									<div class="col-3">
-										<img src="assets/images/produto01lg.jpg" class="img-fluid" alt="Produto 1">
+										<img src="assets/images/produto05.png" class="img-fluid" alt="Produto 2">
 									</div>
 									<div class="col">
 										<span class="subtitle">Produto 2</span>
-										<span class="preco">R$ 289,90</span>
+										<span class="info">Data: 20/07/2016. Valor: R$ 289,90</span>
 									</div>
 								</div>
 							</li>
@@ -1817,7 +1817,6 @@
 
 			//Se o usuário estiver logado.
 			if ($userLogged) {
-				console.log("usuário logado");
 
 				var $button_user = `
 					<svg class="open-data-user link-go-car" data-show="show-menu-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="16" height="16">

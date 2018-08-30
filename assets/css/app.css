@@ -868,9 +868,9 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
 }
 .session-carrinho #main-my-order .subtitle { margin-bottom: 20px; }
 .session-carrinho #main-my-order .lista-meus-pedidos li { border-bottom: 1px solid #ddd; margin-bottom: 10px; padding-bottom: 10px; }
-.session-carrinho #main-my-order .lista-meus-pedidos .preco,
-.session-carrinho #main-my-order .lista-meus-pedidos .subtitle { font-size: 14px; margin-bottom: 0; line-height: 1; }
-.session-carrinho #main-my-order .lista-meus-pedidos .preco { font-size: 12px; }
+.session-carrinho #main-my-order .lista-meus-pedidos .info,
+.session-carrinho #main-my-order .lista-meus-pedidos .subtitle { font-size: 14px; margin-bottom: 0; line-height: 1; color: #666; }
+.session-carrinho #main-my-order .lista-meus-pedidos .info { font-size: 12px; color: #999; }
 .session-carrinho .lista-card-saved li.selecionado { opacity: 1; }
 .session-carrinho .lista-card-saved li.selecionado .in { opacity: 1; filter: blur(0); }
 .session-carrinho .lista-card-saved li.inativo { cursor: default; }
