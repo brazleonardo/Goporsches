@@ -471,7 +471,7 @@ html[data-car="true"] .open-to-car .has-item-car { opacity: 1; }
     position: relative;
     left: -25px;
 }
-.session-carrinho .content { height: 100vh; padding: 10px 0; overflow-y: auto; margin-top: 35px; }
+.session-carrinho .content { height: calc(100vh - 20px); padding: 10px 0; overflow-y: auto; margin-top: 35px; }
 .session-carrinho #main-carrinho .content { height: calc(100vh - 175px); }
 .session-carrinho #main-form-payment .content { height: calc(100vh - 138px); }
 .session-carrinho .content .subtitle { font-size: 14px; font-weight: 300; margin: 0; display: block; }
@@ -657,6 +657,10 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
     left: 0;
 }
 /*Início da identificação dos cartões*/
+.session-carrinho .card-cred .card[data-flag="amex"] .front-card,
+.session-carrinho .card-cred .card[data-flag="amex"] .back-card { background-color: #2557d6; }
+.session-carrinho .card-cred .card[data-flag="amex"] .content-card-cred .card-logo .amex-logo { opacity: 1; }
+
 .session-carrinho .card-cred .card[data-flag="visa"] .front-card,
 .session-carrinho .card-cred .card[data-flag="visa"] .back-card { background-color: #1a216f; }
 .session-carrinho .card-cred .card[data-flag="visa"] .content-card-cred .card-logo .visa-logo { opacity: 1; }
@@ -852,21 +856,30 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
 .session-carrinho .lista-card-saved li { 
     padding: 10px 20px; 
     margin-bottom: 10px; 
-    border: 1px solid #ddd; 
-    opacity: 0.7; 
+    border: 1px solid #ddd;    
     transition: all .4s ease-in-out; 
     cursor: pointer; 
     position: relative;
+    opacity: 0.7; 
 }
-.session-carrinho .lista-card-saved li.ativo,
+.session-carrinho .lista-card-saved li .in { 
+    transition: all .4s ease-in-out;   
+    filter: blur(1.9px) grayscale(1.1);
+}
+.session-carrinho #main-my-order .subtitle { margin-bottom: 20px; }
+.session-carrinho #main-my-order .lista-meus-pedidos li { border-bottom: 1px solid #ddd; margin-bottom: 10px; padding-bottom: 10px; }
+.session-carrinho #main-my-order .lista-meus-pedidos .preco,
+.session-carrinho #main-my-order .lista-meus-pedidos .subtitle { font-size: 14px; margin-bottom: 0; line-height: 1; }
+.session-carrinho #main-my-order .lista-meus-pedidos .preco { font-size: 12px; }
 .session-carrinho .lista-card-saved li.selecionado { opacity: 1; }
+.session-carrinho .lista-card-saved li.selecionado .in { opacity: 1; filter: blur(0); }
 .session-carrinho .lista-card-saved li.inativo { cursor: default; }
 .session-carrinho .lista-card-saved li span { font-size: 14px; display: block; }
 .session-carrinho .lista-card-saved li svg { position: relative; top: 50%; transform: translateY(-50%); }
 .session-carrinho .lista-card-saved li svg.visa-logo { background-color: #2c32a5; }
-.session-carrinho .lista-card-saved li .status { position: absolute; right: 100px; bottom: 0; font-size: 12px; }
-.session-carrinho .lista-card-saved li .status.ativo { color: #36B78A; }
-.session-carrinho .lista-card-saved li .status.inativo { color: #b73641; }
+.session-carrinho .lista-card-saved li .status { position: absolute; right: 100px; bottom: 0; font-size: 12px; opacity: 0; }
+.session-carrinho .lista-card-saved li .status.ativo { color: #36B78A; opacity: 1; }
+.session-carrinho .lista-card-saved li .status.inativo { color: #b73641; opacity: 1; }
 .session-carrinho .lista-card-saved li .link-excluir { position: absolute; right: 15px; bottom: 10px; font-size: 12px; }
 .session-carrinho .lista-card-saved li.text-no-card { border: 0; }
 .session-carrinho .lista-card-saved li.text-no-card h3 { text-align: center; font-size: 16px; font-weight: 300; margin: 0; }
