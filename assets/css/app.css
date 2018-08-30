@@ -1286,8 +1286,6 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
 
 @media screen and (max-width: 768px) {
 
-    
-
     .session-banner.mg-top { margin-top: 35px; }
 
     .session-main .banner-pecas .img,
@@ -1306,6 +1304,8 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
     .session-detalhes-produtos .thums-gallery img { height: 60px; }
     .session-detalhes-produtos .detalhes-produto .d-block strong { width: 120px; }
     .session-detalhes-produtos .d-block .text-sm-full { display: block; padding-left: 0; }
+
+    .session-carrinho #main-form-payment.remove-bar .footer-info { display: none; }
 
     .session-footer .nav-footer{ width: 100%; float: left; text-align: center; }
     .session-footer .card-cred { float: none; display: table; margin: auto; padding-top: 10px; position: static; transform: translateX(0); }

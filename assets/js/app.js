@@ -1957,9 +1957,18 @@
 		* @method helperMontaCartao
 		*/
 		helperMontaCartao: function () {
+
+			//Esconde a barra de finalização
+			$("body").on("focus", "#main-form-payment input", function () {	
+				$(this).closest(".main").addClass("remove-bar");
+			});
+			$("body").on("blur", "#main-form-payment input", function () {
+				$(this).closest(".main").removeClass("remove-bar");
+				$(".content-card-cred span[class='"+$class+"']").removeAttr("focus");
+			});//Fim 
+
 			//Monta o número do cartão de credito
 			$("body").on("keyup", "#main-form-payment input[name='number-card']", function () {
-
 				var $flag = Init.helperValidaBandeiraCartao(this.value.replace(/\D/g, ''));
 
 				$(this).val(function (index, value) {
@@ -1981,11 +1990,9 @@
 				else {
 					$("#main-form-payment .card-cred .card").attr("data-flag", "false");
 				}
-
 			});
 			//Monta a data de expiração cartão de credito
 			$("body").on("keyup", "#main-form-payment input[name='expiry-date-card']", function () {
-
 				$(this).val(this.value.replace(/\D/g, ''));
 				$(this).val($(this).val().replace(/(\d{2})(\d{2})+$/, "$1/$2"));
 
@@ -1997,7 +2004,6 @@
 					$("#main-form-payment .card-cred .card-expiry").html("••/••");
 					$("#main-form-payment .card-cred .card-expiry").removeClass("fhs");
 				}
-
 			});
 			//Monta o nome do dono do cartão de credito
 			$("body").on("keyup", "#main-form-payment input[name='name-card']", function () {
@@ -2009,11 +2015,9 @@
 					$("#main-form-payment .card-cred .card-name").html("NOME COMPLETO");
 					$("#main-form-payment .card-cred .card-name").addClass("fhs");
 				}
-
 			});
 			//Monta o CVV do cartão de credito
 			$("body").on("keyup", "#main-form-payment input[name='cod-seg-card']", function () {
-
 				$(this).val(this.value.replace(/\D/g, ''));
 				$(this).val($(this).val().replace(/^(\d{4})+$/, "$1"));
 
@@ -2025,7 +2029,6 @@
 					$("#main-form-payment .card-cred .card-cvv").html("•••");
 					$("#main-form-payment .card-cred .card-cvv").addClass("fhs");
 				}
-
 			});
 			//Monta exibe o outro lado do cartão
 			$("body").on("focus", "#main-form-payment input[name='cod-seg-card']", function () {
