@@ -873,6 +873,7 @@ body.show-carrinho .session-carrinho[data-show="show-card-saved"] #main-card-sav
 .session-carrinho #main-my-order .lista-meus-pedidos .info { font-size: 12px; color: #999; }
 .session-carrinho .lista-card-saved li.selecionado { opacity: 1; }
 .session-carrinho .lista-card-saved li.selecionado .in { opacity: 1; filter: blur(0); }
+.session-carrinho .lista-card-saved li:hover .in { filter: blur(1.2px); }
 .session-carrinho .lista-card-saved li.inativo { cursor: default; }
 .session-carrinho .lista-card-saved li span { font-size: 14px; display: block; }
 .session-carrinho .lista-card-saved li svg { position: relative; top: 50%; transform: translateY(-50%); }
