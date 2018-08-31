@@ -1957,16 +1957,6 @@
 		* @method helperMontaCartao
 		*/
 		helperMontaCartao: function () {
-
-			//Esconde a barra de finalização
-			$("body").on("focus", "#main-form-payment input", function () {	
-				$(this).closest(".main").addClass("remove-bar");
-			});
-			$("body").on("blur", "#main-form-payment input", function () {
-				$(this).closest(".main").removeClass("remove-bar");
-				$(".content-card-cred span[class='"+$class+"']").removeAttr("focus");
-			});//Fim 
-
 			//Monta o número do cartão de credito
 			$("body").on("keyup", "#main-form-payment input[name='number-card']", function () {
 				var $flag = Init.helperValidaBandeiraCartao(this.value.replace(/\D/g, ''));
@@ -2030,13 +2020,22 @@
 					$("#main-form-payment .card-cred .card-cvv").addClass("fhs");
 				}
 			});
-			//Monta exibe o outro lado do cartão
-			$("body").on("focus", "#main-form-payment input[name='cod-seg-card']", function () {
-				$("#main-form-payment .card-cred .card").addClass("card-flip");
+			//Esconde a barra de finalização
+			$("body").on("focus", "#main-form-payment input", function () {	
+				$(this).closest(".main").addClass("remove-bar");
+				//Monta exibe o outro lado do cartão
+				if( $(this).attr("name") == "cod-seg-card" ){
+					$("#main-form-payment .card-cred .card").addClass("card-flip");
+				}
 			});
-			$("body").on("blur", "#main-form-payment input[name='cod-seg-card']", function () {
-				$("#main-form-payment .card-cred .card").removeClass("card-flip");
-			});
+			$("body").on("blur", "#main-form-payment input", function () {
+				$(this).closest(".main").removeClass("remove-bar");
+				$(".content-card-cred span").removeAttr("focus");
+				//Monta exibe o outro lado do cartão
+				if( $(this).attr("name") == "cod-seg-card" ){
+					$("#main-form-payment .card-cred .card").removeClass("card-flip");
+				}
+			});//Fim 
 		},
 
 		/**
